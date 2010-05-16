@@ -1,0 +1,15 @@
+fweb project:
+ * Web based ERP interface prototype by Matteo Folin
+ * use Sproutcore 1.0 (and SCUI), all javascript, HTML and CSS
+
+TODO:
+
+DONE 1) structure and framework init
+DONE 2) GIT init
+3) create basic views
+4) create basic controllers
+5) refine menù (mock)
+6) refine order index (mock)
+7) Orders datastore and fixtures (server side only when client is OK)
+8) CRUD order actions views...
+...
