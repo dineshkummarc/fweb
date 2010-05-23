@@ -3,6 +3,8 @@ Project:   Fweb
 Copyright: ©2010 Matteo Folin
 =============================================================================
 
+start debug server with ../abbot/bin/sc-server
+
 * Web based ERP interface prototype by Matteo Folin
 * use Sproutcore 1.0 (and SCUI), all javascript, HTML and CSS
 
