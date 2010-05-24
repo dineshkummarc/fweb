@@ -18,8 +18,8 @@ Fweb.MainMenuView = SC.View.extend(
 		
 		/* menù vendite */
 		var subMenuOrdiniReport = [
-			{ title: 'sub sub uno 1', isEnabled: YES},
-			{ title: 'sub sub due 2', isEnabled: YES}
+			{ title: 'report 1', isEnabled: YES},
+			{ title: 'report 2', isEnabled: NO}
 		];
 		var subMenuOrdini = [
 			{ title: 'nuovo', keyEquivalent: 'ctrl_shift_n', icon: 'new-icon' },
@@ -76,15 +76,15 @@ Fweb.MainMenuView = SC.View.extend(
       SC.ToolbarView.design({
         layout: {left: 0, right: 0, top: 0, height: 44},
 				classNames: ['topbar'],
-        childViews: 'logo vendite acquisti amministrazione magazzino endButton'.w(),
+        childViews: 'logo vendite acquisti amministrazione magazzino endButton newTabButton fwebSearchField fwebSearchCancelButton'.w(),
 
 				logo: SC.LabelView.design({
-					layout: { top: 2, left: 26, height: 40, width: 147 },
+					layout: { top: 2, left: 10, height: 40, width: 147 },
 					classNames: ['f5lab-logo']
 				}),
 				
 				vendite: SC.ButtonView.design(SCUI.DropDown, {
-	        layout: { centerY: 0, left: 200, height: 40, width: 100 },
+	        layout: { centerY: 0, left: 300, height: 40, width: 100 },
 					title: 'Vendite',
 	        classNames: ['bar-button'],
 	        toolTip: 'Menù vendite: offerte, ordini, ddt...', 
@@ -104,7 +104,7 @@ Fweb.MainMenuView = SC.View.extend(
       	}),
 
 				acquisti: SC.ButtonView.design(SCUI.DropDown, {
-	        layout: { centerY: 0, left: 300, height: 40, width: 100 },
+	        layout: { centerY: 0, left: 400, height: 40, width: 100 },
 					title: 'Acquisti',
 	        classNames: ['bar-button'],
 	        toolTip: 'Menù acquisti: offerte, ordini...', 
@@ -124,7 +124,7 @@ Fweb.MainMenuView = SC.View.extend(
       	}),
 
 				amministrazione: SC.ButtonView.design(SCUI.DropDown, {
-	        layout: { centerY: 0, left: 400, height: 40, width: 100 },
+	        layout: { centerY: 0, left: 500, height: 40, width: 100 },
 					title: 'Amministrazione',
 	        classNames: ['bar-button'],
 	        toolTip: 'Menù amministrazione: contabilità, anagrafica...', 
@@ -144,7 +144,7 @@ Fweb.MainMenuView = SC.View.extend(
       	}),
 
 				magazzino: SC.ButtonView.design(SCUI.DropDown, {
-	        layout: { centerY: 0, left: 500, height: 40, width: 100 },
+	        layout: { centerY: 0, left: 600, height: 40, width: 100 },
 					title: 'Magazzino',
 	        classNames: ['bar-button'],
 	        toolTip: 'Menù magazzino: materiali, movimenti...', 
@@ -164,12 +164,43 @@ Fweb.MainMenuView = SC.View.extend(
       	}),
 
 				endButton: SC.LabelView.design({
-	        layout: { centerY: 0, left: 601, height: 40, width: 0 },
+	        layout: { centerY: 0, left: 701, height: 40, width: 0 },
 	        classNames: ['bar-button']
+	      }),
+	
+				newTabButton: SC.ButtonView.design({
+					layout: { centerY: 0, right: 240, height: 24, width: 80 },
+					title: 'Nuova',
+					toolTip: 'Apre una nuova tab con una pagina nuova di fweb.',
+					theme: 'capsule',
+					icon: '',
+					mouseDown: function() {
+	          window.open('http://localhost:4020/fweb','_newtab');
+	        },
+				}),
+	
+				fwebSearchField: SC.TextFieldView.design(SCUI.ToolTip, {
+	        layout: { centerY: 0, height: 24, right: 10, width: 200 },
+	        classNames: ['search-bar'],
+	        hint: "search",
+	        toolTip: "search",
+	        //valueBinding: 'Fweb.assignmentsController.searchFilter'
+	      }),
+	      fwebSearchCancelButton: SC.View.design({ // Fweb Search cancel button
+	        layout: { centerY: 1, height: 12, right: 15, width: 12 },
+	        isVisible: YES, //NO,
+	        classNames: ['filter-cancel-icon'],
+	        mouseDown: function() {
+	          //Fweb.assignmentsController.set('searchFilter', '');
+	        },
+	        //isVisibleBinding: SC.Binding.oneWay('Fweb.assignmentsController.searchFilter').bool()
 	      })
+	
 	
       })
     );
+
+
     childViews.push(view);
 
     this.set('childViews', childViews);

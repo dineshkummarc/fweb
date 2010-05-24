@@ -12,12 +12,12 @@
 
 /* topbar logo */
 .topbar {
-	background: #444 url('resources/fweb_images/bar-bg.png') repeat-x !important;
+	background: #444 url('resources/fweb_images/bar-bg-dark.png') repeat-x !important;
 	border-bottom: solid 1px rgb(132, 142, 162) !important;
 	text-shadow: #554 0px -1px 0px !important;
 }
 .f5lab-logo {
-	background: url('resources/fweb_images/f5lab-vortice-h40.png') no-repeat 0 0;
+	background: url('resources/fweb_images/f5lab-vortice-h40-2.png') no-repeat 0 0;
 }
 
 /* Override button.css */
@@ -45,4 +45,64 @@
 }
 .bar-button.hover {
 	background: #444 !important;
+}
+
+
+.sc-view .search-bar {
+  background: static_url('images/default-theme-search-filter-bg.png') no-repeat;
+}
+
+.filter-cancel-icon {
+  background: static_url('images/default-theme-static.png') no-repeat 0 -352px !important;
+  z-index: 100 !important;
+  cursor: pointer !important;
+}
+
+.safari .sc-view .search-bar.focus,
+.mozilla .sc-view .search-bar.focus,
+.msie .sc-view .search-bar.focus {
+  outline: 0;
+}
+
+.safari .search-bar .border {
+  -webkit-appearance: none;
+}
+
+.mozilla .sc-view .search-bar .border {
+  -moz-appearance: none;
+}
+
+.msie .sc-view .search-bar .border {
+  border: 0;
+}
+
+.sc-view .search-bar .padding {
+  top: 2px;
+  right: 22px;
+}
+
+.sc-view .search-bar .padding {
+  left: 24px;
+}
+
+.search-bar input {
+  font-size: 11px;
+}
+
+.mozilla .search-bar input {
+  /*top: 4px;*/
+}
+
+.msie .search-bar input {
+  line-height: 22px;
+}
+
+.sc-text-field-view.search-bar .sc-hint {
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  font-size: 11px;
+  font-style: italic;
+  line-height: 22px;
 }
