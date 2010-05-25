@@ -24,7 +24,7 @@ Fweb.MainMenuView = SC.View.extend(
 		var subMenuOrdini = [
 			{ title: 'nuovo ordine', keyEquivalent: 'ctrl_shift_n', icon: sc_static('resources/icons/add.png') },
 			{ title: 'ricerca', icon: sc_static('resources/icons/magnifier.png') },
-			{ title: 'report', icon: 'report-icon', subMenu: subMenuOrdiniReport },
+			{ title: 'report', icon: sc_static('resources/icons/table_multiple.png'), subMenu: subMenuOrdiniReport },
 			{ isSeparator: YES },
 			{ title: '990 - Alpeat' },
 			{ title: '989 - L.P.T.' },
@@ -35,8 +35,8 @@ Fweb.MainMenuView = SC.View.extend(
 		];
 		var subMenuOfferte = [
 			{ title: 'nuova offerta', keyEquivalent: 'ctrl_shift_n', icon: sc_static('resources/icons/add.png') },
-			{ title: 'ricerca', icon: 'search-icon' },
-			{ title: 'report', icon: 'report-icon', subMenu: subMenuOrdiniReport },
+			{ title: 'ricerca', icon: sc_static('resources/icons/magnifier.png') },
+			{ title: 'report', icon: sc_static('resources/icons/table_multiple.png'), subMenu: subMenuOrdiniReport },
 			{ isSeparator: YES },
 			{ title: '112 - Fincantieri Spa' },
 			{ title: '111 - Alpeat' },
@@ -47,8 +47,8 @@ Fweb.MainMenuView = SC.View.extend(
 		];
 		var subMenuDdt = [
 			{ title: 'nuovo DDT', keyEquivalent: 'ctrl_shift_n', icon: sc_static('resources/icons/add.png') },
-			{ title: 'ricerca', icon: 'search-icon' },
-			{ title: 'report', icon: 'report-icon', subMenu: subMenuOrdiniReport },
+			{ title: 'ricerca', icon: sc_static('resources/icons/magnifier.png') },
+			{ title: 'report', icon: sc_static('resources/icons/table_multiple.png'), subMenu: subMenuOrdiniReport },
 			{ isSeparator: YES },
 			{ title: '701 - Fincantieri Spa' },
 			{ title: '700 - Alpeat' },
@@ -64,60 +64,72 @@ Fweb.MainMenuView = SC.View.extend(
 			{ title: 'fatture' },
 			{ isSeparator: YES },
 			{ title: 'Selected Item', keyEquivalent: 'backspace' },
-			{ title: 'Item with Icon', isChecked: YES, icon: 'email-icon', keyEquivalent: 'ctrl_m' },
-			{ title: 'Item with Icon', checkbox: YES, icon: 'folder', keyEquivalent: 'ctrl_p' }
+			{ title: 'Item with Icon', isChecked: YES, icon: 'sc-icon-alert-16', keyEquivalent: 'ctrl_m' },
+			{ title: 'Item with Icon', checkbox: YES, icon: 'sc-icon-trash-16', keyEquivalent: 'ctrl_p' }
 		];
 		/* menù acquisti */
 		var menuAcquisti = [
-			{ title: 'Item with sub', keyEquivalent: 'ctrl_shift_n', target: 'Fweb' },
+			{ title: 'Item', keyEquivalent: 'ctrl_shift_n', target: 'Fweb' },
 			{ title: 'Checked Item', isChecked: YES, keyEquivalent: 'ctrl_a', checkbox: YES },
 			{ title: 'Selected Item', keyEquivalent: 'backspace' },
 			{ isSeparator: YES },
-			{ title: 'Item with Icon', icon: 'email-icon', keyEquivalent: 'ctrl_m' },
-			{ title: 'Item with Icon', icon: 'folder', keyEquivalent: 'ctrl_p' }
+			{ title: 'Item with Icon', icon: 'sc-icon-favorite-16', keyEquivalent: 'ctrl_m' },
+			{ title: 'Item with Icon', icon: 'sc-icon-options-16', keyEquivalent: 'ctrl_p' }
 		];
 		/* menù amministrazione */
 		var menuAmministrazione = [
-			{ title: 'Item with sub', keyEquivalent: 'ctrl_shift_n', target: 'Fweb' },
+			{ title: 'Item', keyEquivalent: 'ctrl_shift_n', target: 'Fweb' },
 			{ title: 'Checked Item', isChecked: YES, keyEquivalent: 'ctrl_a', checkbox: YES },
 			{ title: 'Selected Item', keyEquivalent: 'backspace' },
 			{ isSeparator: YES },
-			{ title: 'Item with Icon', icon: 'email-icon', keyEquivalent: 'ctrl_m' },
-			{ title: 'Item with Icon', icon: 'folder', keyEquivalent: 'ctrl_p' }
+			{ title: 'Item with Icon', icon: 'sc-icon-document-16', keyEquivalent: 'ctrl_m' },
+			{ title: 'Item with Icon', icon: 'sc-icon-help-16', keyEquivalent: 'ctrl_p' }
 		];
 		/* menù magazzino */
 		var menuMagazzino = [
-			{ title: 'Item with sub', keyEquivalent: 'ctrl_shift_n', target: 'Fweb' },
+			{ title: 'Item', keyEquivalent: 'ctrl_shift_n', target: 'Fweb' },
 			{ title: 'Checked Item', isChecked: YES, keyEquivalent: 'ctrl_a', checkbox: YES },
 			{ title: 'Selected Item', keyEquivalent: 'backspace' },
 			{ isSeparator: YES },
-			{ title: 'Item with Icon', icon: 'email-icon', keyEquivalent: 'ctrl_m' },
-			{ title: 'Item with Icon', icon: 'folder', keyEquivalent: 'ctrl_p' }
+			{ title: 'Item with Icon', icon: 'sc-icon-info-16', keyEquivalent: 'ctrl_m' },
+			{ title: 'Item with Icon', icon: 'sc-icon-folder-16', keyEquivalent: 'ctrl_p' }
+		];
+		
+		// Segmented Button items
+		var segmentedButtons = [
+			{ title: 'pref', value: 'pref', icon: 'sc-icon-options-16' },
+			{ title: 'help', value: 'help', icon: 'sc-icon-help-16' }
 		];
 
 		// Using the Design Pattern method...only need to fill out the first parameter of the createChildView()
     view = this.createChildView( 
       SC.ToolbarView.design({
-        layout: {left: 0, right: 0, top: 0, height: 44},
+        layout: {left: 0, right: 0, top: 0, minWidth: 1024, height: 44},
 				classNames: ['topbar'],
-        childViews: 'logo userName userStatus vendite acquisti amministrazione magazzino endButton newTabButton fwebSearchField fwebSearchCancelButton'.w(),
+        childViews: 'logo endLogo userName userStatus vendite acquisti amministrazione magazzino endButton optionsButtons newTabButton fwebSearchField fwebSearchCancelButton'.w(),
 
 				logo: SC.LabelView.design({
 					layout: { top: 0, left: 10, height: 44, width: 147 },
 					classNames: ['f5lab-logo']
 				}),
 				
+				endLogo: SC.LabelView.design({
+	        layout: { centerY: 0, left: 150, height: 40, width: 0 },
+	        classNames: ['bar-button']
+	      }),
+	
 				userName: SC.LabelView.design({
-					layout: { top: 0, left: 167, height: 22, centerY: 0, width: 130 },
+					layout: { top: 0, left: 170, height: 22, centerY: 0, width: 130 },
 					classNames: ['user-name'],
 					value: 'Matteo Folin',
-					icon: 'sc-icon-user-16'
+					//icon: 'sc-icon-user-16'
 				}),
 				
 				userStatus: SC.LabelView.design({
-					layout: { top: 22, left: 167, height: 22, centerX: 0, centerY: 0, width: 130 },
+					layout: { top: 22, left: 170, height: 22, centerX: 0, centerY: 0, width: 130 },
 					classNames: ['user-status'],
-					value: '(administrator)',
+					value: 'administrator',
+					icon: sc_static('resources/icons/user_suit.png'),
 					//textAlign: 'center'
 				}),
 				
@@ -205,12 +217,23 @@ Fweb.MainMenuView = SC.View.extend(
 	        layout: { centerY: 0, left: 701, height: 40, width: 0 },
 	        classNames: ['bar-button']
 	      }),
+	
+				optionsButtons: SC.SegmentedView.design({
+					layout: { centerY: 0, left: 710, height: 24, width: 90 },
+					theme: 'capsule',
+					items: [
+						{ title: '', value: 'pref', icon: 'sc-icon-options-16' },
+						{ title: '', value: 'help', icon: 'sc-icon-help-16' },
+					],
+		      itemTitleKey: 'title',
+		      itemValueKey: 'value',
+		      itemIconKey: 'icon'
+				}),
 				
 				newTabButton: SC.ButtonView.design({
 					layout: { centerY: 0, right: 220, height: 24, width: 80 },
 					title: 'New',
 					toolTip: 'Apre una nuova tab con una pagina nuova di fweb.',
-					theme: 'capsule',
 					icon: sc_static('resources/icons/application_add.png'),
 					mouseDown: function() {
 	          window.open('http://localhost:4020/fweb','_newtab');
