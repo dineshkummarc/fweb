@@ -22,8 +22,8 @@ Fweb.MainMenuView = SC.View.extend(
 			{ title: 'report 2', isEnabled: NO}
 		];
 		var subMenuOrdini = [
-			{ title: 'nuovo ordine', keyEquivalent: 'ctrl_shift_n', icon: 'new-icon' },
-			{ title: 'ricerca', icon: 'search-icon' },
+			{ title: 'nuovo ordine', keyEquivalent: 'ctrl_shift_n', icon: sc_static('resources/icons/add.png') },
+			{ title: 'ricerca', icon: sc_static('resources/icons/magnifier.png') },
 			{ title: 'report', icon: 'report-icon', subMenu: subMenuOrdiniReport },
 			{ isSeparator: YES },
 			{ title: '990 - Alpeat' },
@@ -34,7 +34,7 @@ Fweb.MainMenuView = SC.View.extend(
 			{ title: 'vedi tutti ...' }
 		];
 		var subMenuOfferte = [
-			{ title: 'nuova offerta', keyEquivalent: 'ctrl_shift_n', icon: 'new-icon' },
+			{ title: 'nuova offerta', keyEquivalent: 'ctrl_shift_n', icon: sc_static('resources/icons/add.png') },
 			{ title: 'ricerca', icon: 'search-icon' },
 			{ title: 'report', icon: 'report-icon', subMenu: subMenuOrdiniReport },
 			{ isSeparator: YES },
@@ -46,7 +46,7 @@ Fweb.MainMenuView = SC.View.extend(
 			{ title: 'vedi tutti ...' }
 		];
 		var subMenuDdt = [
-			{ title: 'nuovo DDT', keyEquivalent: 'ctrl_shift_n', icon: 'new-icon' },
+			{ title: 'nuovo DDT', keyEquivalent: 'ctrl_shift_n', icon: sc_static('resources/icons/add.png') },
 			{ title: 'ricerca', icon: 'search-icon' },
 			{ title: 'report', icon: 'report-icon', subMenu: subMenuOrdiniReport },
 			{ isSeparator: YES },
@@ -100,11 +100,25 @@ Fweb.MainMenuView = SC.View.extend(
       SC.ToolbarView.design({
         layout: {left: 0, right: 0, top: 0, height: 44},
 				classNames: ['topbar'],
-        childViews: 'logo vendite acquisti amministrazione magazzino endButton newTabButton fwebSearchField fwebSearchCancelButton'.w(),
+        childViews: 'logo userName userStatus vendite acquisti amministrazione magazzino endButton newTabButton fwebSearchField fwebSearchCancelButton'.w(),
 
 				logo: SC.LabelView.design({
 					layout: { top: 0, left: 10, height: 44, width: 147 },
 					classNames: ['f5lab-logo']
+				}),
+				
+				userName: SC.LabelView.design({
+					layout: { top: 0, left: 167, height: 22, centerY: 0, width: 130 },
+					classNames: ['user-name'],
+					value: 'Matteo Folin',
+					icon: 'sc-icon-user-16'
+				}),
+				
+				userStatus: SC.LabelView.design({
+					layout: { top: 22, left: 167, height: 22, centerX: 0, centerY: 0, width: 130 },
+					classNames: ['user-status'],
+					value: '(administrator)',
+					//textAlign: 'center'
 				}),
 				
 				vendite: SC.ButtonView.design(SCUI.DropDown, {
@@ -149,7 +163,7 @@ Fweb.MainMenuView = SC.View.extend(
 
 				amministrazione: SC.ButtonView.design(SCUI.DropDown, {
 	        layout: { centerY: 0, left: 500, height: 40, width: 100 },
-					title: 'Amministrazione',
+					title: 'Amministr.',
 	        classNames: ['bar-button'],
 	        toolTip: 'Menù amministrazione: contabilità, anagrafica...', 
 					dropDown: SC.MenuPane.design({
@@ -191,13 +205,13 @@ Fweb.MainMenuView = SC.View.extend(
 	        layout: { centerY: 0, left: 701, height: 40, width: 0 },
 	        classNames: ['bar-button']
 	      }),
-	
+				
 				newTabButton: SC.ButtonView.design({
-					layout: { centerY: 0, right: 240, height: 24, width: 80 },
-					title: 'Nuova',
+					layout: { centerY: 0, right: 220, height: 24, width: 80 },
+					title: 'New',
 					toolTip: 'Apre una nuova tab con una pagina nuova di fweb.',
 					theme: 'capsule',
-					icon: '',
+					icon: sc_static('resources/icons/application_add.png'),
 					mouseDown: function() {
 	          window.open('http://localhost:4020/fweb','_newtab');
 	        },

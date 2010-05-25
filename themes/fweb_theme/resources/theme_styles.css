@@ -19,6 +19,9 @@
 .f5lab-logo {
 	background: url('resources/fweb_images/f5lab-vortice-h44.png') no-repeat 0 0;
 }
+.user-status{
+	font-size: 10px !important;
+}
 
 /* Override button.css */
 .bar-button {
