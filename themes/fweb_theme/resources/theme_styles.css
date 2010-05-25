@@ -14,10 +14,10 @@
 .topbar {
 	background: #444 url('resources/fweb_images/bar-bg-dark.png') repeat-x !important;
 	border-bottom: solid 1px rgb(132, 142, 162) !important;
-	text-shadow: #554 0px -1px 0px !important;
+	text-shadow: #000 0px -1px 0px !important;
 }
 .f5lab-logo {
-	background: url('resources/fweb_images/f5lab-vortice-h40-2.png') no-repeat 0 0;
+	background: url('resources/fweb_images/f5lab-vortice-h44.png') no-repeat 0 0;
 }
 
 /* Override button.css */
@@ -28,7 +28,7 @@
 	font-size: 14px !important;
 	padding-top: 7px !important;
 	text-align: center !important;
-	text-shadow: #554 0px -1px 0px !important;
+	text-shadow: #000 0px -1px 0px !important;
 	background: none !important;
 	color: white !important;
 	border-radius: 0px !important;

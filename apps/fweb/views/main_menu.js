@@ -22,7 +22,7 @@ Fweb.MainMenuView = SC.View.extend(
 			{ title: 'report 2', isEnabled: NO}
 		];
 		var subMenuOrdini = [
-			{ title: 'nuovo', keyEquivalent: 'ctrl_shift_n', icon: 'new-icon' },
+			{ title: 'nuovo ordine', keyEquivalent: 'ctrl_shift_n', icon: 'new-icon' },
 			{ title: 'ricerca', icon: 'search-icon' },
 			{ title: 'report', icon: 'report-icon', subMenu: subMenuOrdiniReport },
 			{ isSeparator: YES },
@@ -33,10 +33,34 @@ Fweb.MainMenuView = SC.View.extend(
 			{ title: '986 - Fincantieri Spa' },
 			{ title: 'vedi tutti ...' }
 		];
+		var subMenuOfferte = [
+			{ title: 'nuova offerta', keyEquivalent: 'ctrl_shift_n', icon: 'new-icon' },
+			{ title: 'ricerca', icon: 'search-icon' },
+			{ title: 'report', icon: 'report-icon', subMenu: subMenuOrdiniReport },
+			{ isSeparator: YES },
+			{ title: '112 - Fincantieri Spa' },
+			{ title: '111 - Alpeat' },
+			{ title: '110 - Vant Srl' },
+			{ title: '109 - Sb - lavorazioni Snc' },
+			{ title: '108 - L.P.T.' },
+			{ title: 'vedi tutti ...' }
+		];
+		var subMenuDdt = [
+			{ title: 'nuovo DDT', keyEquivalent: 'ctrl_shift_n', icon: 'new-icon' },
+			{ title: 'ricerca', icon: 'search-icon' },
+			{ title: 'report', icon: 'report-icon', subMenu: subMenuOrdiniReport },
+			{ isSeparator: YES },
+			{ title: '701 - Fincantieri Spa' },
+			{ title: '700 - Alpeat' },
+			{ title: '699 - Vant Srl' },
+			{ title: '698 - Sb - lavorazioni Snc' },
+			{ title: '697 - L.P.T.' },
+			{ title: 'vedi tutti ...' }
+		];
 		var menuVendite = [
-			{ title: 'offerte'},
+			{ title: 'offerte', subMenu: subMenuOfferte, target: 'Fweb' },
 			{ title: 'ordini', subMenu: subMenuOrdini, target: 'Fweb' },
-			{ title: 'ddt' },
+			{ title: 'ddt', subMenu: subMenuDdt, target: 'Fweb' },
 			{ title: 'fatture' },
 			{ isSeparator: YES },
 			{ title: 'Selected Item', keyEquivalent: 'backspace' },
@@ -79,7 +103,7 @@ Fweb.MainMenuView = SC.View.extend(
         childViews: 'logo vendite acquisti amministrazione magazzino endButton newTabButton fwebSearchField fwebSearchCancelButton'.w(),
 
 				logo: SC.LabelView.design({
-					layout: { top: 2, left: 10, height: 40, width: 147 },
+					layout: { top: 0, left: 10, height: 44, width: 147 },
 					classNames: ['f5lab-logo']
 				}),
 				
