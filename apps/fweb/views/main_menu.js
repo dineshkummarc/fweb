@@ -18,8 +18,8 @@ Fweb.MainMenuView = SC.View.extend(
 		
 		/* menù vendite */
 		var subMenuOrdiniReport = [
-			{ title: 'report 1', isEnabled: YES},
-			{ title: 'report 2', isEnabled: NO}
+			{ title: 'report 1', isEnabled: YES, icon: sc_static('resources/icons/table.png')},
+			{ title: 'report 2', isEnabled: NO, icon: sc_static('resources/icons/table.png')}
 		];
 		var subMenuOrdini = [
 			{ title: 'nuovo ordine', keyEquivalent: 'ctrl_shift_n', icon: sc_static('resources/icons/add.png') },
@@ -106,32 +106,22 @@ Fweb.MainMenuView = SC.View.extend(
       SC.ToolbarView.design({
         layout: {left: 0, right: 0, top: 0, minWidth: 1024, height: 44},
 				classNames: ['topbar'],
-        childViews: 'logo endLogo userName userStatus vendite acquisti amministrazione magazzino endButton optionsButtons newTabButton fwebSearchField fwebSearchCancelButton'.w(),
+        childViews: 'logo userButton vendite acquisti amministrazione magazzino endButton optionsButtons newTabButton fwebSearchField fwebSearchCancelButton'.w(),
 
 				logo: SC.LabelView.design({
 					layout: { top: 0, left: 10, height: 44, width: 147 },
 					classNames: ['f5lab-logo']
 				}),
 				
-				endLogo: SC.LabelView.design({
-	        layout: { centerY: 0, left: 150, height: 40, width: 0 },
-	        classNames: ['bar-button']
-	      }),
-	
-				userName: SC.LabelView.design({
-					layout: { top: 0, left: 170, height: 22, centerY: 0, width: 130 },
-					classNames: ['user-name'],
-					value: 'Matteo Folin',
-					//icon: 'sc-icon-user-16'
-				}),
-				
-				userStatus: SC.LabelView.design({
-					layout: { top: 22, left: 170, height: 22, centerX: 0, centerY: 0, width: 130 },
-					classNames: ['user-status'],
-					value: 'administrator',
-					icon: sc_static('resources/icons/user_suit.png'),
-					//textAlign: 'center'
-				}),
+				userButton: SC.ButtonView.design({
+        	layout: { centerY: 0, left: 151, height: 40, width: 149 },
+        	title: 'Matteo Folin',
+        	icon: sc_static('resources/icons/user_suit.png'),
+        	classNames: ['bar-button'],
+        	target: 'Fweb.userController',
+        	action: 'showUserPane',
+					textAlign: 'center'
+      	}),
 				
 				vendite: SC.ButtonView.design(SCUI.DropDown, {
 	        layout: { centerY: 0, left: 300, height: 40, width: 100 },
@@ -223,7 +213,9 @@ Fweb.MainMenuView = SC.View.extend(
 					theme: 'capsule',
 					items: [
 						{ title: '', value: 'pref', icon: 'sc-icon-options-16' },
-						{ title: '', value: 'help', icon: 'sc-icon-help-16' },
+						{ title: '', value: 'help', icon: 'sc-icon-help-16', action: function() {
+	          window.open('http://localhost:4020/fweb','_newtab');
+	        }, },
 					],
 		      itemTitleKey: 'title',
 		      itemValueKey: 'value',
