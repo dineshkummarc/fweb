@@ -15,7 +15,7 @@ Fweb.userController = SC.ObjectController.create(
 	pane: null,
 
   showUserPane: function() {
-    var pane = SC.PanelPane.create({
+    var pane = SC.SheetPane.create({   // initially was SC.PanelPane
       layout: { centerX: 0, centerY: 0, width: 800, height: 500 },
       contentView: SC.View.extend({
         layout: { top: 0, left: 0, bottom: 0, right: 0 },

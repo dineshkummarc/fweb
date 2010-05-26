@@ -20,6 +20,9 @@ TODO:
  + order controller (CRUD actions: list index, new, edit, delete)
 ...
 
+BUGS:
+ - separators don't appear in submenu
+
 FREE ideas:
 * internal chat/msg - auto msg on activities
 
