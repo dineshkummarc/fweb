@@ -1,5 +1,5 @@
 // ==========================================================================
-// Project:   Fweb.userController
+// Project:   Fweb.preferencesController
 // Copyright: ©2010 My Company, Inc.
 // ==========================================================================
 /*globals Fweb */
@@ -10,35 +10,35 @@
 
   @extends SC.Object
 */
-Fweb.userController = SC.ObjectController.create(
-/** @scope Fweb.userController.prototype */ {
+Fweb.preferencesController = SC.ObjectController.create(
+/** @scope Fweb.preferencesController.prototype */ {
 	pane: null,
 
-  showUserPane: function() {
+  showPreferencesPane: function() {
     var pane = SC.PanelPane.create({
       layout: { centerX: 0, centerY: 0, width: 800, height: 500 },
       contentView: SC.View.extend({
         layout: { top: 0, left: 0, bottom: 0, right: 0 },
-        childViews: 'nameView dataView buttonView'.w(),
+        childViews: 'titleView dataView buttonView'.w(),
 
-        nameView: SC.LabelView.extend({
+        titleView: SC.LabelView.extend({
           layout: { top: 10, left: 0, height: 24 },
           textAlign: SC.ALIGN_CENTER,
           controlSize: SC.LARGE_CONTROL_SIZE,
-          icon: sc_static('resources/icons/user_suit.png'),
-          value: "Matteo Folin"
+          icon: 'sc-icon-options-16',
+          value: "Preferences"
         }),
         
         dataView: SC.LabelView.extend({
         	layout: { top: 40, bottom: 40, left: 10, right: 10 },
-        	value: "...dati dell'utente..."
+        	value: "...preferences..."
         }),
         
         buttonView: SC.ButtonView.extend({
           layout: { width: 80, bottom: 10, height: 24, centerX: 0 },
           title: "Hide",
           action: "remove",
-          target: "Fweb.userController.pane"
+          target: "Fweb.preferencesController.pane"
         })
       })
     });
@@ -49,5 +49,5 @@ Fweb.userController = SC.ObjectController.create(
   hidePane: function() {
     this.pane.remove();
   }
-  
+
 }) ;

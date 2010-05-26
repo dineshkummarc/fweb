@@ -118,6 +118,7 @@ Fweb.MainMenuView = SC.View.extend(
         	title: 'Matteo Folin',
         	icon: sc_static('resources/icons/user_suit.png'),
         	classNames: ['bar-button'],
+	        toolTip: 'Pannello dati utente...', 
         	target: 'Fweb.userController',
         	action: 'showUserPane',
 					textAlign: 'center'
@@ -212,14 +213,14 @@ Fweb.MainMenuView = SC.View.extend(
 					layout: { centerY: 0, left: 710, height: 24, width: 90 },
 					theme: 'capsule',
 					items: [
-						{ title: '', value: 'pref', icon: 'sc-icon-options-16' },
-						{ title: '', value: 'help', icon: 'sc-icon-help-16', action: function() {
-	          window.open('http://localhost:4020/fweb','_newtab');
-	        }, },
+						{ title: '', value: 'pref', icon: 'sc-icon-options-16', target: 'Fweb.preferencesController', action: 'showPreferencesPane' },
+						{ title: '', value: 'help', icon: 'sc-icon-help-16', target: 'Fweb.helpController', action: 'showHelpPane' },
 					],
 		      itemTitleKey: 'title',
 		      itemValueKey: 'value',
-		      itemIconKey: 'icon'
+		      itemIconKey: 'icon',
+		      itemTargetKey: 'target',
+		      itemActionKey: 'action'
 				}),
 				
 				newTabButton: SC.ButtonView.design({
