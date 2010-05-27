@@ -115,7 +115,8 @@ Fweb.MainMenuView = SC.View.extend(
 				
 				userButton: SC.ButtonView.design({
         	layout: { centerY: 0, left: 151, height: 40, width: 149 },
-        	title: 'Matteo Folin',
+        	//title: 'Matteo Folin',
+					titleBinding: "Fweb.userController.user.description",
         	icon: sc_static('resources/icons/user_suit.png'),
         	classNames: ['bar-button'],
 	        toolTip: 'Pannello dati utente...', 

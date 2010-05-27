@@ -13,6 +13,7 @@
 Fweb.userController = SC.ObjectController.create(
 /** @scope Fweb.userController.prototype */ {
 	pane: null,
+	user: null,
 
   showUserPane: function() {
     var pane = SC.SheetPane.create({   // initially was SC.PanelPane
@@ -26,12 +27,14 @@ Fweb.userController = SC.ObjectController.create(
           textAlign: SC.ALIGN_CENTER,
           controlSize: SC.LARGE_CONTROL_SIZE,
           icon: sc_static('resources/icons/user_suit.png'),
-          value: "Matteo Folin"
+          valueBinding: "Fweb.userController.user.description",
         }),
         
         dataView: SC.LabelView.extend({
         	layout: { top: 40, bottom: 40, left: 10, right: 10 },
-        	value: "...dati dell'utente..."
+	        escapeHTML: NO,
+        	value: "<b>username:</b> "+Fweb.userController.user.get('userName')+"<i> // TODO form all data and binding</i>"
+					// TODO form all data and binding
         }),
         
         buttonView: SC.ButtonView.extend({
