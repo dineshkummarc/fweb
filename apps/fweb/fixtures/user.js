@@ -19,6 +19,10 @@ Fweb.User.FIXTURES = [
 	{ guid: 1,
 		userName: "MTF",
 		description: "Matteo Folin",
-		status: "administrator" }
+		role: "administrator",
+		status: "connected",
+		subscriptionDate: "22052010",
+		lastConnection: "",		
+	}
 
 ];
