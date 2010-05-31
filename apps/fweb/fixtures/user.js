@@ -6,6 +6,11 @@
 
 sc_require('models/user');
 
+var now = SC.DateTime.create();
+var yesterday = now.advance({ day: -1 });
+var lastYear = now.advance({ year: -1 });
+
+
 Fweb.User.FIXTURES = [
 
   // TODO: Add your data fixtures here.
@@ -21,8 +26,8 @@ Fweb.User.FIXTURES = [
 		description: "Matteo Folin",
 		role: "administrator",
 		status: "connected",
-		subscriptionDate: "22052010",
-		lastConnection: "",		
+		subscriptionDate: lastYear,
+		lastConnection: yesterday,		
 	}
 
 ];
