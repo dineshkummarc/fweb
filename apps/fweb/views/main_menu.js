@@ -235,14 +235,16 @@ Fweb.MainMenuView = SC.View.extend(
 				}),
 	
 				fwebSearchField: SC.TextFieldView.design(SCUI.ToolTip, {
-	        layout: { centerY: 0, height: 24, left: 900, width: 160 },
+	        // layout: { centerY: 0, height: 24, left: 900, width: 160 },
+		      layout: { centerY: 0, height: 24, right: 10, width: 160 },
 	        classNames: ['search-bar'],
 	        hint: "search",
 	        toolTip: "search",
 	        //valueBinding: 'Fweb.assignmentsController.searchFilter'
 	      }),
 	      fwebSearchCancelButton: SC.View.design({ // Fweb Search cancel button
-	        layout: { centerY: 1, height: 12, left: 1042, width: 12 },
+	        // layout: { centerY: 1, height: 12, left: 1042, width: 12 },
+		      layout: { centerY: 1, height: 12, right: 15, width: 12 },
 	        isVisible: YES, //NO,
 	        classNames: ['filter-cancel-icon'],
 	        mouseDown: function() {
