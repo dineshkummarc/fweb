@@ -13,7 +13,8 @@ TODO:
  DONE structure and framework init
  DONE GIT init
  DONE menu bar view (with panels and controllers)
- + user model, datastore, fixture and binding
+ DONE user model, datastore, fixture and binding on pane
+ + User form with Cancel/Submit
  + welcome page (list of principal actions and recent documents, )
  + order model (cliente -> ordine -> riga)
  + order datastore with fixture
