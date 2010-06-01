@@ -109,3 +109,7 @@
   font-style: italic;
   line-height: 22px;
 }
+
+.formLabel {
+	font-weight: bold;
+}
