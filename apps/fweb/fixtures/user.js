@@ -25,7 +25,7 @@ Fweb.User.FIXTURES = [
 		userName: "MTF",
 		description: "Matteo Folin",
 		role: "administrator",
-		status: "connected",
+		userStatus: "connected",
 		subscriptionDate: lastYear,
 		lastConnection: yesterday,		
 	}

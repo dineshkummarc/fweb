@@ -16,12 +16,13 @@ Fweb.userController = SC.ObjectController.create(
 	user: null,
 
   showUserPane: function() {
+  	// var nested = Fweb.store.chain();
+  	// nested = nested.find(user);
     var pane = SC.SheetPane.create({   // initially was SC.PanelPane
       layout: { centerX: 0, centerY: 0, width: 800, height: 500 },
       contentView: SC.View.extend({
         layout: { top: 0, left: 0, bottom: 0, right: 0 },
-        classNames: ['formPane'],
-        childViews: 'nameView nameLabel userNameView descriptionLabel descriptionView roleLabel roleView statusLabel statusView subscriptionDateLabel subscriptionDateView lastConnectionLabel lastConnectionView buttonView'.w(),
+        childViews: 'nameView nameLabel userNameView descriptionLabel descriptionView roleLabel roleView userStatusLabel userStatusView subscriptionDateLabel subscriptionDateView lastConnectionLabel lastConnectionView buttonView'.w(),
 
         nameView: SC.LabelView.extend({
           layout: { top: 10, left: 0, height: 24 },
@@ -61,14 +62,14 @@ Fweb.userController = SC.ObjectController.create(
         	valueBinding: "Fweb.userController.user.role"
         }),                                                                     
                
-        statusLabel: SC.LabelView.extend({
+        userStatusLabel: SC.LabelView.extend({
         	layout: { top: 150, left: 20, height: 20, width: 100 },
 	        classNames: ['formLabel'],
 					value: 'status'
 				}),                                                                  
-        statusView: SC.TextFieldView.extend({                                 
+        userStatusView: SC.TextFieldView.extend({                                 
         	layout: { top: 150, left: 120, height: 20, width: 100 },                                       
-        	valueBinding: "Fweb.userController.user.status"
+        	valueBinding: "Fweb.userController.user.userStatus"
         }),                                                                     
            
         subscriptionDateLabel: SC.LabelView.extend({

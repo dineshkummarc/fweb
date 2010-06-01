@@ -25,9 +25,8 @@ Fweb.main = function main() {
   // TODO: Set the content property on your primary controller
   // ex: Fweb.contactsController.set('content',Fweb.contacts);
 
-	var query = SC.Query.local(Fweb.User);
-	var users = Fweb.store.find(query);
-	// Fweb.userController.set('nam', users.getEach('description'));
+	var users = Fweb.store.find(Fweb.User);
+	// var nestedStore = Fweb.store.chain();
 	Fweb.userController.set('user', users.firstObject());
 
 } ;

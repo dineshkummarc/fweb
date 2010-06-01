@@ -17,7 +17,7 @@ Fweb.User = SC.Record.extend(
   userName: SC.Record.attr(String),
 	description: SC.Record.attr(String),
 	role: SC.Record.attr(String),
-	status: SC.Record.attr(String),
+	userStatus: SC.Record.attr(String),
 	subscriptionDate: SC.Record.attr(SC.DateTime),
 	lastConnection: SC.Record.attr(SC.DateTime),
 
