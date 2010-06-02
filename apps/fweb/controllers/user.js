@@ -15,19 +15,21 @@ Fweb.userController = SC.ObjectController.create(
 	pane: null,
 	nestedStore: null,
 	user: null,
+	nestedUser: null,
 	
 	loadUser: function() {
 		var user = Fweb.store.find(Fweb.User, 1); // first record of User
+		this.set('user', user);
 		var nestedStore = Fweb.store.chain(); // create nested store
 		var nestedUser = nestedStore.find(user); // nested record of user
-		this.nestedStore = nestedStore;
-		this.user = nestedUser;
+		this.set('nestedStore', nestedStore);
+		this.set('nestedUser', nestedUser);
 	},
 
   showUserPane: function() {
 		this.loadUser();
     var pane = SC.SheetPane.create({   // initially was SC.PanelPane
-      layout: { centerX: 0, centerY: 0, width: 800, height: 500 },
+      layout: { centerX: 0, centerY: 0, width: 400, height: 300 },
       contentView: SC.View.extend({
         layout: { top: 0, left: 0, bottom: 0, right: 0 },
         childViews: 'nameView nameLabel userNameView descriptionLabel descriptionView roleLabel roleView userStatusLabel userStatusView subscriptionDateLabel subscriptionDateView lastConnectionLabel lastConnectionView cancelButtonView saveButtonView'.w(),
@@ -47,7 +49,7 @@ Fweb.userController = SC.ObjectController.create(
 				}),
         userNameView: SC.TextFieldView.extend({
         	layout: { top: 60, left: 120, height: 20, width: 200 },
-        	valueBinding: "Fweb.userController.user.userName"
+        	valueBinding: "Fweb.userController.nestedUser.userName"
         }),
 
 				descriptionLabel: SC.LabelView.extend({
@@ -57,7 +59,7 @@ Fweb.userController = SC.ObjectController.create(
 				}),
         descriptionView: SC.TextFieldView.extend({
         	layout: { top: 90, left: 120, height: 20, width: 200 },                                    
-        	valueBinding: "Fweb.userController.user.description"
+        	valueBinding: "Fweb.userController.nestedUser.description"
         }),                                                                     
                   
         roleLabel: SC.LabelView.extend({
@@ -67,7 +69,7 @@ Fweb.userController = SC.ObjectController.create(
 				}),                                                              
         roleView: SC.TextFieldView.extend({                                    
         	layout: { top: 120, left: 120, height: 20, width: 200 },               
-        	valueBinding: "Fweb.userController.user.role"
+        	valueBinding: "Fweb.userController.nestedUser.role"
         }),                                                                     
                
         userStatusLabel: SC.LabelView.extend({
@@ -77,7 +79,7 @@ Fweb.userController = SC.ObjectController.create(
 				}),                                                                  
         userStatusView: SC.TextFieldView.extend({                                 
         	layout: { top: 150, left: 120, height: 20, width: 100 },                                       
-        	valueBinding: "Fweb.userController.user.userStatus"
+        	valueBinding: "Fweb.userController.nestedUser.userStatus"
         }),                                                                     
            
         subscriptionDateLabel: SC.LabelView.extend({
