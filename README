@@ -16,9 +16,11 @@ TODO:
  DONE user model, datastore, fixture and binding on pane
  DONE User form with Cancel/Submit
  + welcome (page) pane (in preferenze una "prima pagina", altrimenti questa di default, come per office...) (list of principal actions and recent documents, )
- + order model (cliente -> ordine -> riga)
+ + order model (cliente -> ordine -> riga, copia campi plastidite)
  + orders datastore with fixture
  + orders views
+ 		- orders list (for index: listView ? tableView ? ...)
+		- new order ( testa + righe )
  + orders controller (CRUD actions: list index, new, edit, delete)
 ...
 

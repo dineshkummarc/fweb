@@ -48,7 +48,7 @@ Fweb.userController = SC.ObjectController.create(
 					value: 'username'
 				}),
         userNameView: SC.TextFieldView.extend({
-        	layout: { top: 60, left: 120, height: 20, width: 200 },
+        	layout: { top: 60, left: 120, height: 20, width: 240 },
         	valueBinding: "Fweb.userController.nestedUser.userName"
         }),
 
@@ -58,7 +58,7 @@ Fweb.userController = SC.ObjectController.create(
 					value: 'description'
 				}),
         descriptionView: SC.TextFieldView.extend({
-        	layout: { top: 90, left: 120, height: 20, width: 200 },                                    
+        	layout: { top: 90, left: 120, height: 20, width: 240 },                                    
         	valueBinding: "Fweb.userController.nestedUser.description"
         }),                                                                     
                   
@@ -68,7 +68,7 @@ Fweb.userController = SC.ObjectController.create(
 					value: 'role'
 				}),                                                              
         roleView: SC.TextFieldView.extend({                                    
-        	layout: { top: 120, left: 120, height: 20, width: 200 },               
+        	layout: { top: 120, left: 120, height: 20, width: 240 },               
         	valueBinding: "Fweb.userController.nestedUser.role"
         }),                                                                     
                
@@ -78,7 +78,7 @@ Fweb.userController = SC.ObjectController.create(
 					value: 'status'
 				}),                                                                  
         userStatusView: SC.TextFieldView.extend({                                 
-        	layout: { top: 150, left: 120, height: 20, width: 100 },                                       
+        	layout: { top: 150, left: 120, height: 20, width: 240 },                                       
         	valueBinding: "Fweb.userController.nestedUser.userStatus"
         }),                                                                     
            
@@ -88,7 +88,7 @@ Fweb.userController = SC.ObjectController.create(
 					value: 'subcription'
 				}),                                                                    
         subscriptionDateView: SC.LabelView.extend({                                   
-        	layout: { top: 180, left: 120, height: 20, width: 100 },                                       
+        	layout: { top: 180, left: 120, height: 20, width: 240 },                                       
         	value: Fweb.userController.user.get('subscriptionDate').toFormattedString('%d/%m/%Y')
         }),  
 
@@ -98,7 +98,7 @@ Fweb.userController = SC.ObjectController.create(
 					value: 'last connection'
 				}), 
 		    lastConnectionView: SC.LabelView.extend({                                 
-        	layout: { top: 210, left: 120, height: 20, width: 100 },                                       
+        	layout: { top: 210, left: 120, height: 20, width: 240 },                                       
         	value: Fweb.userController.user.get('lastConnection').toFormattedString('%d/%m/%Y %H:%M:%S')
         }),                                                                   
                                                                                

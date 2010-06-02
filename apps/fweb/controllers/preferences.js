@@ -16,7 +16,7 @@ Fweb.preferencesController = SC.ObjectController.create(
 
   showPreferencesPane: function() {
     var pane = SC.SheetPane.create({
-      layout: { centerX: 0, centerY: 0, width: 800, height: 500 },
+      layout: { centerX: 0, centerY: 0, width: 600, height: 400 },
       contentView: SC.View.extend({
         layout: { top: 0, left: 0, bottom: 0, right: 0 },
         childViews: 'titleView dataView buttonView'.w(),
