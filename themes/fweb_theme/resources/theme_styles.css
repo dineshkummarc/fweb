@@ -113,3 +113,7 @@
 .formLabel {
 	font-weight: bold;
 }
+
+.welcome-logo {
+	background: static_url('fweb_images/sproutcore-logo-mini.png') no-repeat;
+}

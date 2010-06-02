@@ -214,7 +214,6 @@ Fweb.MainMenuView = SC.View.extend(
 	
 				optionsButtons: SC.SegmentedView.design({
 					layout: { centerY: 0, left: 710, height: 24, width: 150 },
-					theme: 'capsule',
 					items: [
 						{ title: '', value: 'pref', icon: 'sc-icon-options-16', target: 'Fweb.preferencesController', action: 'showPreferencesPane' },
 						{ title: '', value: 'help', icon: 'sc-icon-help-16', target: 'Fweb.helpController', action: 'showHelpPane' },

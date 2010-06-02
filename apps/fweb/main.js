@@ -27,6 +27,9 @@ Fweb.main = function main() {
 
 	// function that load user data and nested store in userController
 	Fweb.userController.loadUser();
+	
+	// show welcome pane
+	Fweb.welcomeController.showWelcomePane();
 
 } ;
 
