@@ -13,16 +13,24 @@
 Fweb.userController = SC.ObjectController.create(
 /** @scope Fweb.userController.prototype */ {
 	pane: null,
+	nestedStore: null,
 	user: null,
+	
+	loadUser: function() {
+		var user = Fweb.store.find(Fweb.User, 1); // first record of User
+		var nestedStore = Fweb.store.chain(); // create nested store
+		var nestedUser = nestedStore.find(user); // nested record of user
+		this.nestedStore = nestedStore;
+		this.user = nestedUser;
+	},
 
   showUserPane: function() {
-  	// var nested = Fweb.store.chain();
-  	// nested = nested.find(user);
+		this.loadUser();
     var pane = SC.SheetPane.create({   // initially was SC.PanelPane
       layout: { centerX: 0, centerY: 0, width: 800, height: 500 },
       contentView: SC.View.extend({
         layout: { top: 0, left: 0, bottom: 0, right: 0 },
-        childViews: 'nameView nameLabel userNameView descriptionLabel descriptionView roleLabel roleView userStatusLabel userStatusView subscriptionDateLabel subscriptionDateView lastConnectionLabel lastConnectionView buttonView'.w(),
+        childViews: 'nameView nameLabel userNameView descriptionLabel descriptionView roleLabel roleView userStatusLabel userStatusView subscriptionDateLabel subscriptionDateView lastConnectionLabel lastConnectionView cancelButtonView saveButtonView'.w(),
 
         nameView: SC.LabelView.extend({
           layout: { top: 10, left: 0, height: 24 },
@@ -92,11 +100,18 @@ Fweb.userController = SC.ObjectController.create(
         	value: Fweb.userController.user.get('lastConnection').toFormattedString('%d/%m/%Y %H:%M:%S')
         }),                                                                   
                                                                                
-        buttonView: SC.ButtonView.extend({
-          layout: { width: 80, bottom: 10, height: 24, centerX: 0 },
-          title: "Hide",
+        cancelButtonView: SC.ButtonView.extend({
+          layout: { width: 80, bottom: 10, height: 24, centerX: -50 },
+          title: "Cancel",
           action: "remove",
           target: "Fweb.userController.pane"
+        }),
+
+				saveButtonView: SC.ButtonView.extend({
+          layout: { width: 80, bottom: 10, height: 24, centerX: 50 },
+          title: "Save",
+          action: "save",
+          target: "Fweb.userController"
         })
       })
     });
@@ -106,6 +121,11 @@ Fweb.userController = SC.ObjectController.create(
 
   hidePane: function() {
     this.pane.remove();
-  }
+  },
+
+	save: function() {
+		this.nestedStore.commitChanges();
+		this.pane.remove();
+	}
   
 }) ;
