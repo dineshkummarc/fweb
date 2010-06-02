@@ -110,7 +110,10 @@ Fweb.MainMenuView = SC.View.extend(
 
 				logo: SC.LabelView.design({
 					layout: { top: 0, left: 10, height: 44, width: 147 },
-					classNames: ['f5lab-logo']
+					classNames: ['f5lab-logo'],
+					mouseDown: function() {
+	          window.open('http://f5lab.com','_newtab');
+	        },
 				}),
 				
 				userButton: SC.ButtonView.design({
@@ -210,11 +213,12 @@ Fweb.MainMenuView = SC.View.extend(
 	      }),
 	
 				optionsButtons: SC.SegmentedView.design({
-					layout: { centerY: 0, left: 710, height: 24, width: 90 },
+					layout: { centerY: 0, left: 710, height: 24, width: 150 },
 					theme: 'capsule',
 					items: [
 						{ title: '', value: 'pref', icon: 'sc-icon-options-16', target: 'Fweb.preferencesController', action: 'showPreferencesPane' },
 						{ title: '', value: 'help', icon: 'sc-icon-help-16', target: 'Fweb.helpController', action: 'showHelpPane' },
+						{ title: '', value: 'print', icon: sc_static('resources/icons/printer.png'), target: 'Fweb.mainMenuController', action: 'print' },
 					],
 		      itemTitleKey: 'title',
 		      itemValueKey: 'value',
@@ -224,7 +228,7 @@ Fweb.MainMenuView = SC.View.extend(
 				}),
 				
 				newTabButton: SC.ButtonView.design({
-					layout: { centerY: 0, left: 810, height: 24, width: 80 },
+					layout: { centerY: 0, left: 870, height: 24, width: 80 },
 					title: 'New',
 					toolTip: 'Apre una nuova tab con una pagina nuova di fweb.',
 					icon: sc_static('resources/icons/application_add.png'),

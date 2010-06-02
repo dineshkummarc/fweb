@@ -14,11 +14,12 @@ TODO:
  DONE GIT init
  DONE menu bar view (with panels and controllers)
  DONE user model, datastore, fixture and binding on pane
- + User form with Cancel/Submit
- + welcome page (list of principal actions and recent documents, )
+ DONE User form with Cancel/Submit
+ + welcome (page) pane (in preferenze una "prima pagina", altrimenti questa di default, come per office...) (list of principal actions and recent documents, )
  + order model (cliente -> ordine -> riga)
- + order datastore with fixture
- + order controller (CRUD actions: list index, new, edit, delete)
+ + orders datastore with fixture
+ + orders views
+ + orders controller (CRUD actions: list index, new, edit, delete)
 ...
 
 BUGS:
