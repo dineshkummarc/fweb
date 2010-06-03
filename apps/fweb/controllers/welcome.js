@@ -24,7 +24,7 @@ Fweb.welcomeController = SC.ArrayController.create(
         childViews: 'welcomeLogoView titleView inviteView areasButtonView invite2View newButtonView invite3View listDocsView savePrefView savePrefLabelView buttonHideView'.w(),
 				
 				welcomeLogoView: SC.LabelView.design({
-          layout: { top: 20, right: 20, height: 127, width: 120 },
+          layout: { top: 20, right: 5, height: 139, width: 146 },
 					classNames: ['welcome-logo'],
 				}),
 				
@@ -77,13 +77,13 @@ Fweb.welcomeController = SC.ArrayController.create(
 				}),
         
 				invite3View: SC.LabelView.design({
-          layout: { centerY: 0, top: 210, left: 20, height: 24 },
+          layout: { centerY: 0, top: 200, left: 20, height: 24 },
           icon: sc_static('resources/icons/table_edit.png'),
           value: 'oppure riapri uno dei documenti chiusi recentemente'
         }),
 
 				listDocsView: SC.ListView.design({
-          layout: { centerX: 0, top: 240, left: 20, height: 150, right: 20 },
+          layout: { centerX: 0, top: 230, left: 20, height: 150, right: 20 },
 					contentBinding: "Fweb.welcomeController.arrangedObjects",
 					selectionBinding: "Fweb.welcomeController.selection",
 					contentIconKey: "iconDoc",     

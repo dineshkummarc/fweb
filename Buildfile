@@ -6,5 +6,4 @@
 # Add initial buildfile information here
 #config :all, :required => :sproutcore
 
-config :all, :required => [:sproutcore, :scui]
-config :fweb, :theme => :fweb_theme
+config :all, :required => [:sproutcore, :scui], :load_fixtures => true, :theme => :fweb_theme
