@@ -31,7 +31,8 @@ Fweb.preferencesController = SC.ObjectController.create(
         
         dataView: SC.LabelView.extend({
         	layout: { top: 40, bottom: 40, left: 10, right: 10 },
-        	value: "...preferences..."
+        	escapeHTML: NO,
+        	value: "...preferences... <br /><br /> + la 'pagina/funzione di accesso (default = welcome pane)'"
         }),
         
         buttonView: SC.ButtonView.extend({
