@@ -19,21 +19,37 @@ Fweb.Recent.FIXTURES = [
   { guid: 1,
     typeDoc: "ddt",
     numDoc: "10/2013",
- 		descDoc: "DDT 10/2013 of 12/5/2010 - Alpeat Snc - 5 colli" },
+ 		descDoc: "DDT 10/2013 of 12/5/2010 - Alpeat Snc - 5 colli",
+ 		iconDoc: "sc_static('resources/icons/table.png')," },
   
   { guid: 2,
     typeDoc: "ord",
     numDoc: "10/3303",
- 		descDoc: "Ordine 10/3303 of 12/5/2010 - Minini SPA - 45 lastre" },
+ 		descDoc: "Ordine 10/3303 of 12/5/2010 - Minini SPA - 45 lastre",
+ 		iconDoc: "sc_static('resources/icons/table.png')," },
   
  	{ guid: 3,
     typeDoc: "ddt",
     numDoc: "10/2010",
- 		descDoc: "DDT 10/2010 of 12/5/2010 - Vant Snc - 65 colli" },
+ 		descDoc: "DDT 10/2010 of 12/5/2010 - Vant Snc - 65 colli",
+ 		iconDoc: "sc_static('resources/icons/table.png')," },
   
  	{ guid: 4,
 	  typeDoc: "off",
     numDoc: "10/1111",
- 		descDoc: "Offerta of 12/5/2010 - DRF by cept snc - 9 lastre" },
+ 		descDoc: "Offerta 10/1111 of 12/5/2010 - DRF by cept snc - 9 lastre",
+ 		iconDoc: "sc_static('resources/icons/table.png')," },
+
+ 	{ guid: 5,
+	  typeDoc: "off",
+    numDoc: "10/1110",
+ 		descDoc: "Offerta 10/1110 of 12/5/2010 - DRF by cept snc - 9 lastre",
+ 		iconDoc: "sc_static('resources/icons/table.png')," },
+ 		
+ 	{ guid: 6,
+	  typeDoc: "off",
+    numDoc: "10/1109",
+ 		descDoc: "Offerta 10/1109 of 12/5/2010 - DRF by cept snc - 9 lastre",
+ 		iconDoc: "sc_static('resources/icons/table.png')," },
   
 ];

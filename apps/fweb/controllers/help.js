@@ -16,7 +16,7 @@ Fweb.helpController = SC.ObjectController.create(
 
   showHelpPane: function() {
     var pane = SC.PanelPane.create({
-      layout: { centerX: 0, centerY: 0, width: 800, height: 500 },
+      layout: { centerX: 0, centerY: 0, left: 40, right: 40, top: 85, bottom: 40, },
       contentView: SC.View.extend({
         layout: { top: 0, left: 0, bottom: 0, right: 0 },
         childViews: 'titleView dataView buttonView'.w(),

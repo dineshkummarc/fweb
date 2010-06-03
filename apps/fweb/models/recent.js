@@ -17,5 +17,6 @@ Fweb.Recent = SC.Record.extend(
   typeDoc: SC.Record.attr(String),
 	numDoc: SC.Record.attr(String),
 	descDoc: SC.Record.attr(String),
+	iconDoc: SC.Record.attr(String),
 
 }) ;
