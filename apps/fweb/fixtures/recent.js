@@ -51,5 +51,29 @@ Fweb.Recent.FIXTURES = [
     numDoc: "10/1109",
  		descDoc: "Offerta 10/1109 of 12/5/2010 - DRF by cept snc - 9 lastre",
  		iconDoc: sc_static('resources/icons/table.png') },
+ 		
+ 	{ guid: 7,
+	  typeDoc: "off",
+    numDoc: "10/1109",
+ 		descDoc: "Offerta 10/1109 of 12/5/2010 - DRF by cept snc - 9 lastre",
+ 		iconDoc: sc_static('resources/icons/table.png') },
+
+ 	{ guid: 8,
+	  typeDoc: "off",
+    numDoc: "10/1109",
+ 		descDoc: "Offerta 10/1109 of 12/5/2010 - DRF by cept snc - 9 lastre",
+ 		iconDoc: sc_static('resources/icons/table.png') },
+ 		
+ 	{ guid: 9,
+	  typeDoc: "off",
+    numDoc: "10/1109",
+ 		descDoc: "Offerta 10/1109 of 12/5/2010 - DRF by cept snc - 9 lastre",
+ 		iconDoc: sc_static('resources/icons/table.png') },
+ 		
+ 	{ guid: 10,
+	  typeDoc: "off",
+    numDoc: "10/1109",
+ 		descDoc: "Offerta 10/1109 of 12/5/2010 - DRF by cept snc - 9 lastre",
+ 		iconDoc: sc_static('resources/icons/table.png') },
   
 ];

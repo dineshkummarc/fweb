@@ -82,14 +82,18 @@ Fweb.welcomeController = SC.ArrayController.create(
           value: 'oppure riapri uno dei documenti chiusi recentemente'
         }),
 
-				listDocsView: SC.ListView.design({
-          layout: { centerX: 0, top: 230, left: 20, height: 150, right: 20 },
+				listDocsView: SC.ScrollView.design({
+        layout: { centerX: 0, top: 230, left: 20, height: 150, right: 20 },
+        hasHorizontalScroller: NO,
+				contentView: SC.ListView.design({
+          layout: { top: 0, left: 0 },
 					contentBinding: "Fweb.welcomeController.arrangedObjects",
 					selectionBinding: "Fweb.welcomeController.selection",
 					contentIconKey: "iconDoc",     
 					contentValueKey: "descDoc",
 					hasContentIcon: YES,
 					rowHeight: 21
+					}),
 				}),
 
 				savePrefView: SC.CheckboxView.design({
