@@ -16,7 +16,7 @@ TODO:
  DONE user model, datastore, fixture and binding on pane
  DONE User form with Cancel/Submit
  DONE welcome (page) pane (in preferenze una "prima pagina", altrimenti questa di default, come per office...) (list of principal actions and recent documents, )
- + order model (cliente -> ordine -> riga, copia campi plastidite)
+ DONE order model (cliente -> ordine -> riga) fixture (Dino -> ord.1 -> row.1)
  + orders datastore with fixture
  + orders views
  		- orders list (for index: listView ? tableView ? ...)
@@ -28,6 +28,7 @@ BUGS:
  - separators don't appear in submenu
 
 FREE ideas:
+* creare un model Sede per avere infiniti indirizzi & riferimenti... anche per le destinazioni alternative ! Tipo: sede principale, sede legale, magazzino, destinaz. alternativa ecc ecc...
 * some doc(report in pdf for example) could be open in modal pane, with buttons to send to page, new tab, printer ecc... (a visual field S/V/X/A + parameters of actual F12)
 * internal chat/msg - auto msg on activities
 
