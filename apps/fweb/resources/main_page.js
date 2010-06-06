@@ -27,13 +27,18 @@ Fweb.mainPage = SC.Page.design({
 	
 	OrdersView: SC.View.design({
 		layout: { left: 0, right: 0, top: 0, bottom: 0 },
-		childViews: 'TitleView OrdersTabsView'.w(),
+		childViews: 'TitleView FilterView OrdersTabsView'.w(),
 		
 		TitleView: SC.LabelView.design({
 			layout: { top: 4, left: 10, width: 100, height: 24},
 			classNames: ['titleMainContainer'],
 			controlSize: SC.LARGE_CONTROL_SIZE,
 			value: 'Ordini'
+		}),
+		
+		FilterView: SC.LabelView.design({
+			layout: { top: 4, left: 120, width: 200, height: 24},
+			value: '... qui ci vanno i filtri...'
 		}),
 		
 		OrdersTabsView: SC.TabView.design({

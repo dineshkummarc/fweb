@@ -121,3 +121,11 @@
 .titleMainContainer {
 	text-shadow: #000 0px -1px 0px !important;
 }
+
+.sc-tab-view > div.sc-container-view {
+	background: white !important;
+	color: black !important;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+}
