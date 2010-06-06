@@ -25,28 +25,67 @@ Fweb.mainPage = SC.Page.design({
 
 	}),
 	
-	OrdersTableView: SC.TableView.design({
-    layout: { left: 15, right: 15, top: 15, bottom: 15 },
-    //backgroundColor: "white", 
-    columns: [ 
-      SC.TableColumn.create({ 
-        key:   'num', 
-        label: 'Numero', 
-      }), 
-      SC.TableColumn.create({ 
-        key:   'date', 
-        label: 'Date',
-      }),
-	     SC.TableColumn.create({ 
-        key:   'ordStatus', 
-        label: 'Status', 
-      })
-    ],
+	OrdersView: SC.View.design({
+		layout: { left: 0, right: 0, top: 0, bottom: 0 },
+		childViews: 'TitleView OrdersTabsView'.w(),
+		
+		TitleView: SC.LabelView.design({
+			layout: { top: 4, left: 10, width: 100, height: 24},
+			classNames: ['titleMainContainer'],
+			controlSize: SC.LARGE_CONTROL_SIZE,
+			value: 'Ordini'
+		}),
+		
+		OrdersTabsView: SC.TabView.design({
+   		layout: { left:10, right:10, top:30, bottom:10 },
+			value: 'OrdersTableView',
+			items: [
+        { title: "Table", value: "OrdersTableView", icon: sc_static('resources/icons/table.png') },
+	      { title: "Tree", value: "OrdersTreeView", icon: sc_static('resources/icons/text_list_bullets.png') },
+	      { title: "Pdf", value: "OrdersPdfView", icon: sc_static('resources/icons/page_white_acrobat.png') }
+			],		
+	    itemTitleKey: 'title',
+	    itemValueKey: 'value',
+			itemIconKey: 'icon',
+     	userDefaultKey: "table"
+		}),
+		
+		OrdersTableView: SC.TableView.design({
+	    layout: { left: 10, right: 10, top: 10, bottom: 10 },
+	    backgroundColor: "#F2F2F2", 
+	    columns: [ 
+	      SC.TableColumn.create({ 
+	        key:   'num', 
+	        label: 'Numero',
+					width: 50
+	      }), 
+	      SC.TableColumn.create({ 
+	        key:   'date', 
+	        label: 'Date',
+					width: 100
+	      }),
+		     SC.TableColumn.create({ 
+	        key:   'ordStatus', 
+	        label: 'Status', 
+					width: 50
+	      })
+	    ],
 
-    contentBinding:   'Fweb.ordersController.arrangedObjects', 
-    selectOnMouseDown: YES,
-    exampleView: SC.TableRowView, 
-    recordType: Fweb.Order,
-  })
+	    contentBinding: 'Fweb.ordersController.arrangedObjects', 
+	    selectOnMouseDown: YES,
+	    exampleView: SC.TableRowView, 
+	    recordType: Fweb.Order,
+	  })
+	}),
+	
+	OrdersTreeView: SC.LabelView.design({
+    layout: { left: 10, right: 10, top: 10, bottom: 10 },
+		value: 'OrdersTreeView'
+	}),
+	
+	OrdersPdfView: SC.LabelView.design({
+    layout: { left: 10, right: 10, top: 10, bottom: 10 },
+		value: 'OrdersPdfView'
+	}),
 	
 });

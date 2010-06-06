@@ -16,7 +16,7 @@ Fweb.ordersController = SC.ArrayController.create(
 	nowShowing: "",
 	
 	showOrders: function() {
-		this.set('nowShowing', 'OrdersTableView')
+		this.set('nowShowing', 'OrdersView')
 	}
 
 }) ;

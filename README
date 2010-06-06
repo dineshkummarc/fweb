@@ -23,7 +23,7 @@ TODO:
  + orders controller (CRUD actions: list index, new, edit, delete)
  + orders views
  		- orders list (for index: listView ? tableView ? ...)
-		- new order ( testa + righe )
+		- new/view/edit order ( testa + righe ) []
 ...
 
 BUGS:

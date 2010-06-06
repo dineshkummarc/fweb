@@ -117,3 +117,7 @@
 .welcome-logo {
 	background: static_url('fweb_images/sproutcore-logo-mini.png') no-repeat;
 }
+
+.titleMainContainer {
+	text-shadow: #000 0px -1px 0px !important;
+}

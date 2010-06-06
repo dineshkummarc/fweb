@@ -56,6 +56,7 @@ Fweb.Order = SC.Record.extend(
 	  return this.getEach('destination', 'address', 'city', 'cap', 'prov', 'tel').compact().join(' ');
 	}.property('destination', 'address', 'city', 'cap', 'prov', 'tel').cacheable(),
 	
+	// TODO doesn't work ! mmmhhhh....
 	formattedDate: function() {
 		return this.getEach('date').map('toFormattedString', '%d/%m/%Y');
 	}.property('date').cacheable()
