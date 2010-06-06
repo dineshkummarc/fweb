@@ -43,7 +43,7 @@ Fweb.welcomeController = SC.ArrayController.create(
 				areasButtonView: SC.SegmentedView.design({
 					layout: { centerY: 0, centerX: 0, top: 80, height: 24, width: 400 },
 					items: [
-						{ title: 'Vendite', value: 'vendite', icon: '', target: 'Fweb.welcomeController.pane', action: 'remove' },
+						{ title: 'Vendite', value: 'vendite', icon: '', target: 'Fweb.welcomeController', action: 'showOrders' },
 						{ title: 'Acquisti', value: 'acquisti', icon: '', target: 'Fweb.welcomeController.pane', action: 'remove' },
 						{ title: 'Amministrazione', value: 'amiministrazione', icon: '', target: 'Fweb.welcomeController.pane', action: 'remove' },
 						{ title: 'Magazzino', value: 'magazzino', icon: '', target: 'Fweb.welcomeController.pane', action: 'remove' },
@@ -120,6 +120,12 @@ Fweb.welcomeController = SC.ArrayController.create(
 
   hidePane: function() {
     this.pane.remove();
-  }
+  },
+
+	showOrders: function() {
+		this.hidePane();
+		Fweb.ordersController.showOrders();
+	}
+
 
 }) ;

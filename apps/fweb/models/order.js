@@ -53,8 +53,12 @@ Fweb.Order = SC.Record.extend(
 	modPag: SC.Record.attr(String),
 	
 	fullDest: function() {
-	    return this.getEach('destination', 'address', 'city', 'cap', 'prov', 'tel').compact().join(' ');
-	  }.property('destination', 'address', 'city', 'cap', 'prov', 'tel').cacheable()
+	  return this.getEach('destination', 'address', 'city', 'cap', 'prov', 'tel').compact().join(' ');
+	}.property('destination', 'address', 'city', 'cap', 'prov', 'tel').cacheable(),
+	
+	formattedDate: function() {
+		return this.getEach('date').map('toFormattedString', '%d/%m/%Y');
+	}.property('date').cacheable()
 	
 	// others from F12 standard tables :
 	/* oi_dest_n_1        char (4),  { dest. nota 1 }

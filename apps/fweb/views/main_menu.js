@@ -59,7 +59,7 @@ Fweb.MainMenuView = SC.View.extend(
 		];
 		var menuVendite = [
 			{ title: 'offerte', subMenu: subMenuOfferte, target: 'Fweb' },
-			{ title: 'ordini', subMenu: subMenuOrdini, target: 'Fweb' },
+			{ title: 'ordini', subMenu: subMenuOrdini, target: 'Fweb.ordersController', action: 'showOrders' },
 			{ title: 'ddt', subMenu: subMenuDdt, target: 'Fweb' },
 			{ title: 'fatture' },
 			{ isSeparator: YES },

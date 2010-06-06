@@ -3,11 +3,12 @@ Project:   Fweb
 Copyright: ©2010 Matteo Folin
 =============================================================================
 
-start debug server with ../abbot/bin/sc-server
-build with ../abbot/bin/sc-build fweb -r
-
 * Web based ERP interface prototype by Matteo Folin
 * use Sproutcore 1.0 (and SCUI), all javascript, HTML and CSS
+
+start debug server with ../abbot/bin/sc-server
+build with ../abbot/bin/sc-build fweb -r
+NB. git ignore tmp/**/*
 
 TODO:
  DONE structure and framework init
@@ -17,17 +18,20 @@ TODO:
  DONE User form with Cancel/Submit
  DONE welcome (page) pane (in preferenze una "prima pagina", altrimenti questa di default, come per office...) (list of principal actions and recent documents, )
  DONE order model (cliente -> ordine -> riga) fixture (Dino -> ord.1 -> row.1)
- + orders datastore with fixture
+ + TODO: 1) navigation !? barmenu? side-itunes-menu? how and where from welcome ? 
+				 2) table: date formatting ? styling? sorting?
+ + orders controller (CRUD actions: list index, new, edit, delete)
  + orders views
  		- orders list (for index: listView ? tableView ? ...)
 		- new order ( testa + righe )
- + orders controller (CRUD actions: list index, new, edit, delete)
 ...
 
 BUGS:
  - separators don't appear in submenu
+ - don't work in IE
 
 FREE ideas:
+* provare anche un menù a barra laterale alla iTunes + multi colonna alla finder...
 * creare un model Sede per avere infiniti indirizzi & riferimenti... anche per le destinazioni alternative ! Tipo: sede principale, sede legale, magazzino, destinaz. alternativa ecc ecc...
 * some doc(report in pdf for example) could be open in modal pane, with buttons to send to page, new tab, printer ecc... (a visual field S/V/X/A + parameters of actual F12)
 * internal chat/msg - auto msg on activities

@@ -19,14 +19,14 @@ Fweb.main = function main() {
   // create multiple pages and panes.  
   Fweb.getPath('mainPage.mainPane').append() ;
 
-  // Step 2. Set the content property on your primary controller.
-  // This will make your app come alive!
-
   // TODO: Set the content property on your primary controller
   // ex: Fweb.contactsController.set('content',Fweb.contacts);
 
 	// function that load user data and nested store in userController
 	Fweb.userController.loadUser();
+	
+	// load orders data 
+	Fweb.ordersController.set('content',Fweb.store.find(Fweb.Order));
 	
 	// show welcome pane
 	Fweb.welcomeController.showWelcomePane();

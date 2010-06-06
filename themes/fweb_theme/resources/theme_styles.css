@@ -46,8 +46,8 @@
 .bar-button.active {
 	background: #333 !important;
 }
-.bar-button.hover {
-	background: #444 !important;
+.bar-button:hover {
+	/*background: #333 !important;*/
 }
 
 

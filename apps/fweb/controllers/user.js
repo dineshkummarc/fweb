@@ -113,6 +113,7 @@ Fweb.userController = SC.ObjectController.create(
           layout: { width: 80, bottom: 10, height: 24, centerX: 50 },
           title: "Save",
           action: "save",
+					isDefault: YES,
           target: "Fweb.userController"
         })
       })
