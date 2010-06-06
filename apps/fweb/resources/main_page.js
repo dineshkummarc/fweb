@@ -27,18 +27,33 @@ Fweb.mainPage = SC.Page.design({
 	
 	OrdersView: SC.View.design({
 		layout: { left: 0, right: 0, top: 0, bottom: 0 },
-		childViews: 'TitleView FilterView OrdersTabsView'.w(),
+		childViews: 'TitleView AddButtonView FilterButtonView FilterDescView OrdersTabsView'.w(),
 		
 		TitleView: SC.LabelView.design({
-			layout: { top: 4, left: 10, width: 100, height: 24},
+			layout: { top: 10, left: 20, width: 100, height: 24},
 			classNames: ['titleMainContainer'],
 			controlSize: SC.LARGE_CONTROL_SIZE,
 			value: 'Ordini'
 		}),
 		
-		FilterView: SC.LabelView.design({
-			layout: { top: 4, left: 120, width: 200, height: 24},
-			value: '... qui ci vanno i filtri...'
+		AddButtonView: SC.ButtonView.design({
+			layout: { top: 10, left: 150, width: 80, height: 24},
+			title: 'Nuovo',
+			toolTip: 'Inserimento nuovo ordine',
+			icon: sc_static('resources/icons/table_add.png'),
+		}),
+		
+		FilterButtonView: SC.ButtonView.design({
+			layout: { top: 10, left: 250, width: 80, height: 24},
+			title: 'Filtri',
+			toolTip: 'Apre il pannello dei filtri',
+			icon: sc_static('resources/icons/filter.png'),
+		}),
+		
+		FilterDescView: SC.LabelView.design({
+			layout: { top: 14, left: 340, width: 300, height: 20},
+			value: 'tutti gli ordini',
+			toolTip: 'Descrizione dei filtri attivi',
 		}),
 		
 		OrdersTabsView: SC.TabView.design({
@@ -85,12 +100,12 @@ Fweb.mainPage = SC.Page.design({
 	
 	OrdersTreeView: SC.LabelView.design({
     layout: { left: 10, right: 10, top: 10, bottom: 10 },
-		value: 'OrdersTreeView'
+		value: 'OrdersTreeView: una vista ad albero (per data o cliente)'
 	}),
 	
 	OrdersPdfView: SC.LabelView.design({
     layout: { left: 10, right: 10, top: 10, bottom: 10 },
-		value: 'OrdersPdfView'
+		value: 'OrdersPdfView: una stampa in pdf (o html) formattata'
 	}),
 	
 });
