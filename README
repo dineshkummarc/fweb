@@ -19,9 +19,9 @@ TODO:
  DONE welcome (page) pane (in preferenze una "prima pagina", altrimenti questa di default, come per office...) (list of principal actions and recent documents, )
  DONE order model (cliente -> ordine -> riga) fixture (Dino -> ord.1 -> row.1)
  DONE orders page with tabs for table, tree and pdf
+ DONE filters panel
+ DONE info unsupported-option panel as default action
  + TODO:
- 		DONE filters panel
- 		2) info unsupported-option panel as default action
  		3) complete and format order table
  		navigation !? barmenu? side-itunes-menu? how and where from welcome ? 
  		4) area's pages (sort of multi-step wizard: welcome->area->action)
