@@ -69,35 +69,36 @@ Fweb.mainPage = SC.Page.design({
 			itemIconKey: 'icon',
      	userDefaultKey: "table"
 		}),
-		
-		OrdersTableView: SC.TableView.design({
-	    layout: { left: 10, right: 10, top: 10, bottom: 10 },
-	    backgroundColor: "#F2F2F2", 
-	    columns: [ 
-	      SC.TableColumn.create({ 
-	        key:   'num', 
-	        label: 'Numero',
-					width: 50
-	      }), 
-	      SC.TableColumn.create({ 
-	        key:   'date', 
-	        label: 'Date',
-					width: 100
-	      }),
-		     SC.TableColumn.create({ 
-	        key:   'ordStatus', 
-	        label: 'Status', 
-					width: 50
-	      })
-	    ],
 
-	    contentBinding: 'Fweb.ordersController.arrangedObjects', 
-	    selectOnMouseDown: YES,
-	    exampleView: SC.TableRowView, 
-	    recordType: Fweb.Order,
-	  })
 	}),
-	
+			
+	OrdersTableView: SC.TableView.design({
+		layout: { left: 10, right: 10, top: 10, bottom: 10 },
+	  backgroundColor: "#F2F2F2", 
+	  columns: [ 
+	    SC.TableColumn.create({ 
+	      key:   'num', 
+	      label: 'Numero',
+				width: 50
+	    }), 
+	    SC.TableColumn.create({ 
+	      key:   'date', 
+	      label: 'Date',
+				width: 100
+	    }),
+      SC.TableColumn.create({ 
+	      key:   'ordStatus', 
+	      label: 'Status', 
+				width: 50
+	    })
+	  ],
+
+	  contentBinding: 'Fweb.ordersController.arrangedObjects', 
+	  selectOnMouseDown: YES,
+	  exampleView: SC.TableRowView, 
+	  recordType: Fweb.Order,
+	}),
+	  
 	OrdersTreeView: SC.LabelView.design({
     layout: { left: 10, right: 10, top: 10, bottom: 10 },
 		value: 'OrdersTreeView: una vista ad albero (per data o cliente)'
