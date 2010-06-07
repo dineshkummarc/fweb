@@ -109,7 +109,7 @@ Fweb.MainMenuView = SC.View.extend(
         childViews: 'logo userButton vendite acquisti amministrazione magazzino endButton optionsButtons newTabButton fwebSearchField fwebSearchCancelButton'.w(),
 
 				logo: SC.LabelView.design({
-					layout: { top: 0, left: 10, height: 44, width: 147 },
+					layout: { top: 6, left: 14, height: 32, width: 93 },
 					classNames: ['f5lab-logo'],
 					mouseDown: function() {
 	          window.open('http://f5lab.com','_newtab');
@@ -117,7 +117,7 @@ Fweb.MainMenuView = SC.View.extend(
 				}),
 				
 				userButton: SC.ButtonView.design({
-        	layout: { centerY: 0, left: 151, height: 40, width: 149 },
+        	layout: { centerY: 0, left: 121, height: 40, width: 149 },
 					titleBinding: "Fweb.userController.user.description",
         	icon: sc_static('resources/icons/user_suit.png'),
         	classNames: ['bar-button'],
@@ -128,7 +128,7 @@ Fweb.MainMenuView = SC.View.extend(
       	}),
 				
 				vendite: SC.ButtonView.design(SCUI.DropDown, {
-	        layout: { centerY: 0, left: 300, height: 40, width: 100 },
+	        layout: { centerY: 0, left: 270, height: 40, width: 100 },
 					title: 'Vendite',
 	        classNames: ['bar-button'],
 	        toolTip: 'Menù vendite: offerte, ordini, ddt...', 
@@ -148,7 +148,7 @@ Fweb.MainMenuView = SC.View.extend(
       	}),
 
 				acquisti: SC.ButtonView.design(SCUI.DropDown, {
-	        layout: { centerY: 0, left: 400, height: 40, width: 100 },
+	        layout: { centerY: 0, left: 370, height: 40, width: 100 },
 					title: 'Acquisti',
 	        classNames: ['bar-button'],
 	        toolTip: 'Menù acquisti: offerte, ordini...', 
@@ -168,7 +168,7 @@ Fweb.MainMenuView = SC.View.extend(
       	}),
 
 				amministrazione: SC.ButtonView.design(SCUI.DropDown, {
-	        layout: { centerY: 0, left: 500, height: 40, width: 100 },
+	        layout: { centerY: 0, left: 470, height: 40, width: 100 },
 					title: 'Amministr.',
 	        classNames: ['bar-button'],
 	        toolTip: 'Menù amministrazione: contabilità, anagrafica...', 
@@ -188,7 +188,7 @@ Fweb.MainMenuView = SC.View.extend(
       	}),
 
 				magazzino: SC.ButtonView.design(SCUI.DropDown, {
-	        layout: { centerY: 0, left: 600, height: 40, width: 100 },
+	        layout: { centerY: 0, left: 570, height: 40, width: 100 },
 					title: 'Magazzino',
 	        classNames: ['bar-button'],
 	        toolTip: 'Menù magazzino: materiali, movimenti...', 
@@ -208,12 +208,12 @@ Fweb.MainMenuView = SC.View.extend(
       	}),
 
 				endButton: SC.LabelView.design({
-	        layout: { centerY: 0, left: 701, height: 40, width: 0 },
+	        layout: { centerY: 0, left: 671, height: 40, width: 0 },
 	        classNames: ['bar-button']
 	      }),
 	
 				optionsButtons: SC.SegmentedView.design({
-					layout: { centerY: 0, left: 710, height: 24, width: 150 },
+					layout: { centerY: 0, left: 680, height: 24, width: 150 },
 					items: [
 						{ title: '', value: 'pref', icon: 'sc-icon-options-16', target: 'Fweb.preferencesController', action: 'showPreferencesPane' },
 						{ title: '', value: 'help', icon: 'sc-icon-help-16', target: 'Fweb.helpController', action: 'showHelpPane' },
@@ -227,7 +227,7 @@ Fweb.MainMenuView = SC.View.extend(
 				}),
 				
 				newTabButton: SC.ButtonView.design({
-					layout: { centerY: 0, left: 870, height: 24, width: 80 },
+					layout: { centerY: 0, left: 840, height: 24, width: 80 },
 					title: 'New',
 					toolTip: 'Apre una nuova tab con una pagina nuova di fweb.',
 					icon: sc_static('resources/icons/application_add.png'),

@@ -20,7 +20,7 @@ TODO:
  DONE order model (cliente -> ordine -> riga) fixture (Dino -> ord.1 -> row.1)
  DONE orders page with tabs for table, tree and pdf
  + TODO:
- 		1) filters panel
+ 		DONE filters panel
  		2) info unsupported-option panel as default action
  		3) complete and format order table
  		navigation !? barmenu? side-itunes-menu? how and where from welcome ? 

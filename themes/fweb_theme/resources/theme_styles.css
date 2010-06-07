@@ -17,7 +17,7 @@
 	text-shadow: #000 0px -1px 0px !important;
 }
 .f5lab-logo {
-	background: url('resources/fweb_images/f5lab-vortice-h44.png') no-repeat 0 0;
+	background: url('resources/fweb_images/f5lab-vortice-h44-mini.png') no-repeat 0 0;
 }
 .user-status{
 	font-size: 10px !important;
@@ -119,6 +119,7 @@
 }
 
 .titleMainContainer {
+	font-size: 22px !important;
 	text-shadow: #000 0px -1px 0px !important;
 }
 

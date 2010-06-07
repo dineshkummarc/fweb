@@ -41,6 +41,8 @@ Fweb.mainPage = SC.Page.design({
 			title: 'Nuovo',
 			toolTip: 'Inserimento nuovo ordine',
 			icon: sc_static('resources/icons/table_add.png'),
+			target: 'Fweb.mainMenuController',
+			action: 'showSorryPane',
 		}),
 		
 		FilterButtonView: SC.ButtonView.design({
@@ -48,6 +50,8 @@ Fweb.mainPage = SC.Page.design({
 			title: 'Filtri',
 			toolTip: 'Apre il pannello dei filtri',
 			icon: sc_static('resources/icons/filter.png'),
+			target: 'Fweb.ordersController',
+    	action: 'showFilterPane',
 		}),
 		
 		FilterDescView: SC.LabelView.design({

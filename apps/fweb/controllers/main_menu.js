@@ -13,8 +13,20 @@
 Fweb.mainMenuController = SC.ObjectController.create(
 /** @scope Fweb.mainMenuController.prototype */ {
 
+	sorryPane: null,
+	
 	print: function() {
 		window.print();
 	},
+
+  showSorryPane: function() {
+    var pane = SC.AlertPane.warn("Mi dispiace tantissimo ma...", 'questa funzione non è ancora stata implementata', '', "OK", "Cancel", 'Other...', this); 
+    pane.append();
+    this.set('sorryPane', pane);
+  },
+
+  hideSorryPane: function() {
+    this.sorryPane.remove();
+  }
 
 }) ;
