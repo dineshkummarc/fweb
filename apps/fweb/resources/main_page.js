@@ -78,6 +78,7 @@ Fweb.mainPage = SC.Page.design({
 			
 	OrdersTableView: SC.TableView.design({
 		layout: { left: 10, right: 10, top: 10, bottom: 10 },
+		classNames: 'listTable',
 	  backgroundColor: "#F2F2F2", 
 	  columns: [ 
 	    SC.TableColumn.create({ 
@@ -101,6 +102,14 @@ Fweb.mainPage = SC.Page.design({
 	  selectOnMouseDown: YES,
 	  exampleView: SC.TableRowView, 
 	  recordType: Fweb.Order,
+		sortStateDidChange: function(column, sortState) {
+	    cont = this.get('content').sortProperty(column.get("key"));
+	    if (sortState === SC.SORT_DESCENDING) {
+	      Fweb.ordersController.set('content', cont.reverse());
+	    } else {
+	      Fweb.ordersController.set('content', cont);        
+	    }
+		}    
 	}),
 	  
 	OrdersTreeView: SC.LabelView.design({
