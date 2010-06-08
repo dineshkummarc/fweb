@@ -18,12 +18,13 @@ Fweb.MainMenuView = SC.View.extend(
 		
 		/* menù vendite */
 		var subMenuOrdiniReport = [
-			{ title: 'report 1', isEnabled: YES, icon: sc_static('resources/icons/table.png')},
-			{ title: 'report 2', isEnabled: NO, icon: sc_static('resources/icons/table.png')}
+			{ title: 'report 1', isEnabled: YES, icon: sc_static('resources/icons/table.png'), target: 'Fweb.mainMenuController', action: 'showSorryPane' },
+			{ title: 'report 2', isEnabled: NO, icon: sc_static('resources/icons/table.png'), target: 'Fweb.mainMenuController', action: 'showSorryPane' }
 		];
 		var subMenuOrdini = [
-			{ title: 'nuovo ordine', keyEquivalent: 'ctrl_shift_n', icon: sc_static('resources/icons/add.png') },
-			{ title: 'ricerca', icon: sc_static('resources/icons/magnifier.png') },
+			{ title: 'lista ordini', keyEquivalent: 'ctrl_shift_i', icon: sc_static('resources/icons/table.png'), target: 'Fweb.ordersController', action: 'showOrders', },
+			{ title: 'nuovo ordine', keyEquivalent: 'ctrl_shift_n', icon: sc_static('resources/icons/add.png'), target: 'Fweb.mainMenuController', action: 'showSorryPane', },
+			{ title: 'ricerca', icon: sc_static('resources/icons/magnifier.png'), target: 'Fweb.mainMenuController', action: 'showSorryPane', },
 			{ title: 'report', icon: sc_static('resources/icons/table_multiple.png'), subMenu: subMenuOrdiniReport },
 			{ isSeparator: YES },
 			{ title: '990 - Alpeat' },
@@ -34,8 +35,9 @@ Fweb.MainMenuView = SC.View.extend(
 			{ title: 'vedi tutti ...' }
 		];
 		var subMenuOfferte = [
-			{ title: 'nuova offerta', keyEquivalent: 'ctrl_shift_n', icon: sc_static('resources/icons/add.png') },
-			{ title: 'ricerca', icon: sc_static('resources/icons/magnifier.png') },
+			{ title: 'lista offerte', keyEquivalent: 'ctrl_shift_i', icon: sc_static('resources/icons/table.png'), target: 'Fweb.mainMenuController', action: 'showSorryPane' },
+			{ title: 'nuova offerta', keyEquivalent: 'ctrl_shift_n', icon: sc_static('resources/icons/add.png'), target: 'Fweb.mainMenuController', action: 'showSorryPane' },
+			{ title: 'ricerca', icon: sc_static('resources/icons/magnifier.png'), target: 'Fweb.mainMenuController', action: 'showSorryPane' },
 			{ title: 'report', icon: sc_static('resources/icons/table_multiple.png'), subMenu: subMenuOrdiniReport },
 			{ isSeparator: YES },
 			{ title: '112 - Fincantieri Spa' },
@@ -46,8 +48,9 @@ Fweb.MainMenuView = SC.View.extend(
 			{ title: 'vedi tutti ...' }
 		];
 		var subMenuDdt = [
-			{ title: 'nuovo DDT', keyEquivalent: 'ctrl_shift_n', icon: sc_static('resources/icons/add.png') },
-			{ title: 'ricerca', icon: sc_static('resources/icons/magnifier.png') },
+			{ title: 'lista DDT', keyEquivalent: 'ctrl_shift_i', icon: sc_static('resources/icons/table.png'), target: 'Fweb.mainMenuController', action: 'showSorryPane' },
+			{ title: 'nuovo DDT', keyEquivalent: 'ctrl_shift_n', icon: sc_static('resources/icons/add.png'), target: 'Fweb.mainMenuController', action: 'showSorryPane' },
+			{ title: 'ricerca', icon: sc_static('resources/icons/magnifier.png'), target: 'Fweb.mainMenuController', action: 'showSorryPane' },
 			{ title: 'report', icon: sc_static('resources/icons/table_multiple.png'), subMenu: subMenuOrdiniReport },
 			{ isSeparator: YES },
 			{ title: '701 - Fincantieri Spa' },
@@ -58,9 +61,9 @@ Fweb.MainMenuView = SC.View.extend(
 			{ title: 'vedi tutti ...' }
 		];
 		var menuVendite = [
-			{ title: 'offerte', subMenu: subMenuOfferte, target: 'Fweb' },
-			{ title: 'ordini', subMenu: subMenuOrdini, target: 'Fweb.ordersController', action: 'showOrders' },
-			{ title: 'ddt', subMenu: subMenuDdt, target: 'Fweb' },
+			{ title: 'offerte', subMenu: subMenuOfferte },
+			{ title: 'ordini', subMenu: subMenuOrdini },
+			{ title: 'ddt', subMenu: subMenuDdt },
 			{ title: 'fatture' },
 			{ isSeparator: YES },
 			{ title: 'Selected Item', keyEquivalent: 'backspace' },

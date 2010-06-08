@@ -20,7 +20,7 @@ Fweb.mainMenuController = SC.ObjectController.create(
 	},
 
   showSorryPane: function() {
-    var pane = SC.AlertPane.warn("Mi dispiace tantissimo ma...", 'questa funzione non è ancora stata implementata', '', "OK", "Cancel", 'Other...', this); 
+    var pane = SC.AlertPane.warn("Mi dispiace tantissimo ma...", 'questa funzione non è ancora stata implementata', '', "OK", this); 
     pane.append();
     this.set('sorryPane', pane);
   },
