@@ -112,7 +112,13 @@ SC.TableView = SC.ListView.extend(SC.TableDelegate, {
       var newSortState = sortState === SC.SORT_ASCENDING ?
        SC.SORT_DESCENDING : SC.SORT_ASCENDING;
 
+      //column.set('sortState', newSortState); // CHANGED AS IN http://wiki.sproutcore.com/Basic+TableView+Tutorial+-+Sorting
       column.set('sortState', newSortState);
+		  var content = this.get('content');
+			var del = this.delegateFor('isTableDelegate', this.delegate, content);
+		  if (del !== null) {
+	    del.sortStateDidChange(column, newSortState);
+		  }  // END OF CHANGED
     }
     
     // Exit drag mode (and cancel any scheduled drag modes).

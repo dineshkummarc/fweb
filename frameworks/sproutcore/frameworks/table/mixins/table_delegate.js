@@ -37,5 +37,11 @@ SC.TableDelegate = {
     proposedWidth = Math.min(max, proposedWidth);
     
     return proposedWidth;
-  }
+  },
+  
+  // CHANGED AS IN http://wiki.sproutcore.com/Basic+TableView+Tutorial+-+Sorting
+  sortStateDidChange: function(column, sortState) {
+	  return;
+	} // END OF CHANGED
+	
 };

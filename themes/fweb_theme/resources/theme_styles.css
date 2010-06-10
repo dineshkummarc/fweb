@@ -123,10 +123,20 @@
 	text-shadow: #000 0px -1px 0px !important;
 }
 
+/* ORDERS TABLE */
 .sc-tab-view > div.sc-container-view {
 	background: white !important;
 	color: black !important;
 	-webkit-border-radius: 5px;
 	-moz-border-radius: 5px;
 	border-radius: 5px;
+}
+.sc-table-header-sort-active {
+	/*padding-right: 16px !important;*/
+}
+.sc-table-header-sort-active.sc-table-header-sort-desc {
+	background: static_url('icons/arrow_up.png') top right no-repeat !important;
+}
+.sc-table-header-sort-active.sc-table-header-sort-asc {
+	background: static_url('icons/arrow_down.png') bottom right no-repeat !important;
 }
