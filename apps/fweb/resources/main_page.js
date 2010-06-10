@@ -84,7 +84,7 @@ Fweb.mainPage = SC.Page.design({
 	    SC.TableColumn.create({ 
 	      key:   'num', 
 	      label: 'Numero',
-				width: 50
+				width: 100
 	    }), 
 	    SC.TableColumn.create({ 
 	      key:   'date', 
@@ -94,7 +94,7 @@ Fweb.mainPage = SC.Page.design({
       SC.TableColumn.create({ 
 	      key:   'ordStatus', 
 	      label: 'Status', 
-				width: 50
+				width: 100
 	    })
 	  ],
 
