@@ -123,13 +123,26 @@
 	text-shadow: #000 0px -1px 0px !important;
 }
 
-/* ORDERS TABLE */
+/* ORDERS list */
 .sc-tab-view > div.sc-container-view {
 	background: white !important;
 	color: black !important;
 	-webkit-border-radius: 5px;
 	-moz-border-radius: 5px;
 	border-radius: 5px;
+}
+.sc-table-view {
+	border: 1px solid #AAAAAA;
+}
+.sc-table-row {
+	
+}
+.sc-table-header {
+	background: #F2F2F2;
+}
+.sc-table-cell {
+	border: 1px solid #AAAAAA;
+	padding: 0 2px !important;
 }
 .sc-table-header-sort-active {
 	/*padding-right: 16px !important;*/

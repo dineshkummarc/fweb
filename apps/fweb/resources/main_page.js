@@ -78,23 +78,23 @@ Fweb.mainPage = SC.Page.design({
 			
 	OrdersTableView: SC.TableView.design({
 		layout: { left: 10, right: 10, top: 10, bottom: 10 },
-		classNames: 'listTable',
-	  backgroundColor: "#F2F2F2", 
+		classNames: 'listTable', 
 	  columns: [ 
 	    SC.TableColumn.create({ 
 	      key:   'num', 
-	      label: 'Numero',
-				width: 100
+	      label: 'N.',
+				width: 32,
+				textalign: 'right',
 	    }), 
 	    SC.TableColumn.create({ 
 	      key:   'date', 
 	      label: 'Date',
-				width: 100
+				width: 100,
 	    }),
       SC.TableColumn.create({ 
 	      key:   'ordStatus', 
-	      label: 'Status', 
-				width: 100
+	      label: 'St', 
+				width: 32,
 	    })
 	  ],
 
