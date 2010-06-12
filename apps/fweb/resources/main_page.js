@@ -87,14 +87,44 @@ Fweb.mainPage = SC.Page.design({
 				textalign: 'right',
 	    }), 
 	    SC.TableColumn.create({ 
-	      key:   'date', 
-	      label: 'Date',
+	      key:   'formattedDate', 
+	      label: 'Data',
 				width: 100,
 	    }),
       SC.TableColumn.create({ 
+	      key:   'ragSocCli', 
+	      label: 'Cliente', 
+				width: 100,
+	    }),
+			SC.TableColumn.create({ 
 	      key:   'ordStatus', 
 	      label: 'St', 
 				width: 32,
+	    }),
+			SC.TableColumn.create({ 
+	      key:   'clientRef', 
+	      label: 'Rif.cliente', 
+				width: 100,
+	    }),
+			SC.TableColumn.create({ 
+	      key:   'modPag', 
+	      label: 'Pagamento', 
+				width: 100,
+	    }),
+			SC.TableColumn.create({ 
+	      key:   'ddtCausale', 
+	      label: 'Cau.', 
+				width: 100,
+	    }),
+			SC.TableColumn.create({ 
+	      key:   'ddtPorto', 
+	      label: 'Por.', 
+				width: 100,
+	    }),
+	 	  SC.TableColumn.create({ 
+	      key:   'fullDest', 
+	      label: 'Destinazione', 
+				width: 100,
 	    })
 	  ],
 

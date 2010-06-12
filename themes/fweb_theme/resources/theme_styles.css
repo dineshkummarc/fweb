@@ -132,17 +132,14 @@
 	border-radius: 5px;
 }
 .sc-table-view {
-	border: 1px solid #AAAAAA;
-}
-.sc-table-row {
-	
 }
 .sc-table-header {
-	background: #F2F2F2;
+	border-bottom: #666 solid 1px;
+}
+.sc-table-row.odd {
+	background: #F2F2F2;	
 }
 .sc-table-cell {
-	border: 1px solid #AAAAAA;
-	padding: 0 2px !important;
 }
 .sc-table-header-sort-active {
 	/*padding-right: 16px !important;*/

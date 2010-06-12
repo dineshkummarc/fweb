@@ -52,14 +52,17 @@ Fweb.Order = SC.Record.extend(
 	valute: SC.Record.attr(String),
 	modPag: SC.Record.attr(String),
 	
+	ragSocCli: function() {
+		return this.get('client').get('ragSoc');
+	}.property('ragSoc').cacheable(),
+	
 	fullDest: function() {
 	  return this.getEach('destination', 'address', 'city', 'cap', 'prov', 'tel').compact().join(' ');
 	}.property('destination', 'address', 'city', 'cap', 'prov', 'tel').cacheable(),
 	
-	// TODO doesn't work ! mmmhhhh....
 	formattedDate: function() {
-		return this.getEach('date').map('toFormattedString', '%d/%m/%Y');
-	}.property('date').cacheable()
+		return this.get('date').toFormattedString('%d/%m/%Y');
+	}.property('date').cacheable(),
 	
 	// others from F12 standard tables :
 	/* oi_dest_n_1        char (4),  { dest. nota 1 }
