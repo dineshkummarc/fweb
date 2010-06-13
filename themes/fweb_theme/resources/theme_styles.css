@@ -142,11 +142,12 @@
 .sc-table-cell {
 }
 .sc-table-header-sort-active {
-	/*padding-right: 16px !important;*/
 }
 .sc-table-header-sort-active.sc-table-header-sort-desc {
 	background: static_url('fweb_images/up-down.png') top right no-repeat !important;
+	background-color: #FFAAAA !important;
 }
 .sc-table-header-sort-active.sc-table-header-sort-asc {
 	background: static_url('fweb_images/up-down.png') bottom right no-repeat !important;
+	background-color: #AAFFAA !important;
 }

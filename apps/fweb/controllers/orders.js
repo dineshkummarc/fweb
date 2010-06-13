@@ -15,6 +15,8 @@ Fweb.ordersController = SC.ArrayController.create(
 
 	nowShowing: "",
 	filterPane: null,
+	ordersPopupMenu: null,
+	alertPane: null,
 	
 	showOrders: function() {
 		this.set('nowShowing', 'OrdersView')
@@ -52,8 +54,17 @@ Fweb.ordersController = SC.ArrayController.create(
     this.set('filterPane', pane);
   },
 
+	showAlertPane: function(message, subMessage) {
+		if (message==undefined || message=='') { message = 'Alert!'};
+		if (subMessage==undefined || subMessage=='') { subMessage = 'something happened.'};
+		subMessage = Fweb.ordersController.getPath('selection');
+    var pane = SC.AlertPane.warn(message, subMessage, '', "OK", this); 
+    pane.append();
+    this.set('alertPane', pane);
+  },
+
   hideFilterPane: function() {
     this.filterPane.remove();
-  }
-
+  },
+	
 }) ;

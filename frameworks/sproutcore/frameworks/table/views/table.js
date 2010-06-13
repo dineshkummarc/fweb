@@ -112,7 +112,8 @@ SC.TableView = SC.ListView.extend(SC.TableDelegate, {
       var newSortState = sortState === SC.SORT_ASCENDING ?
        SC.SORT_DESCENDING : SC.SORT_ASCENDING;
 
-      //column.set('sortState', newSortState); // CHANGED AS IN http://wiki.sproutcore.com/Basic+TableView+Tutorial+-+Sorting
+      //column.set('sortState', newSortState);
+					// CHANGED AS IN http://wiki.sproutcore.com/Basic+TableView+Tutorial+-+Sorting
       column.set('sortState', newSortState);
 		  var content = this.get('content');
 			var del = this.delegateFor('isTableDelegate', this.delegate, content);

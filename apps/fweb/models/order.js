@@ -27,6 +27,7 @@ Fweb.Order = SC.Record.extend(
 	date: SC.Record.attr(SC.DateTime),
 	clientRef: SC.Record.attr(String),
 	dateClientRef: SC.Record.attr(SC.DateTime),
+	dateDelivery: SC.Record.attr(SC.DateTime),
 	ordStatus: SC.Record.attr(String),
 	ordType: SC.Record.attr(String),
 	ordDesc: SC.Record.attr(String),
@@ -64,6 +65,46 @@ Fweb.Order = SC.Record.extend(
 		return this.get('date').toFormattedString('%d/%m/%Y');
 	}.property('date').cacheable(),
 	
+	formattedDateDelivery: function() {
+		return this.get('dateDelivery').toFormattedString('%d/%m/%Y');
+	}.property('dateDelivery').cacheable(),
+	
+	// F12 standard fields
+	/* oi_val_sconto      float,     { Valore Sconto }
+	oi_acconto         float,     { Acconto }
+	oi_cambio          float,     { Cambio }
+	oi_s_conto_cli_for integer,   { S/Conto Cliente }
+	oi_ann_num         integer,   { Anno/Numero Ordine }
+	oi_rif_offerta     integer,   { Offerta (AA/N) }
+	oi_dt_rif_est      date,      { Data Rifer. Esterno }
+	oi_dt_prop_ord     date,      { Data Proposta }
+	oi_dt_cons         date,      { Data Consegna }
+	oi_dt_conf_ord     date,      { Data Conferma }
+	oi_num_var         smallint,  { num. variazioni }
+	oi_stato_ordine    char (1),  { Stato (P,C,E,S,I,Z) }
+	oi_tipologia_ord   char (5),  { Tipologia Ordine }
+	oi_rf_esterno      char (40), { Riferimento Esterno }
+	oi_modello         char (40), { Descrizione Generale }
+	oi_operatore       char (3),  { Operatore }
+	oi_dest_alt        char (5),  { Destinaz. Alternativa }
+	oi_nm_destinat     char (40), { Nome }
+	oi_de_ind          char (40), { Indirizzo }
+	oi_de_cap          char (5),  { C.A.P. }
+	oi_de_loca         char (40), { Localita` }
+	oi_de_prov         char (4),  { Prov. }
+	oi_de_paese        char (3),  { Paese }
+	oi_cau_bolla       char (5),  { Causale Bolla }
+	oi_porto           char (5),  { Porto }
+	oi_trasporto       char (1),  { Trasporto (M,D,V) }
+	oi_vettore         char (5),  { Vettore }
+	oi_zona_vet        char (5),  { Zona del Vettore }
+	oi_modo_trasp      char (1),  { Modo Trasporto (1-9) }
+	oi_zona            char (8),  { Zona }
+	oi_agente          char (3),  { Agente }
+	oi_sigla_listino   char (5),  { Sigla Listino }
+	oi_listino         char (1),  { Listino (1,2, A,..,E) }
+	oi_valuta          char (5),  { Valuta }
+	oi_mod_pag         char (3),  { Modalita` di Pagamento } */
 	// others from F12 standard tables :
 	/* oi_dest_n_1        char (4),  { dest. nota 1 }
 	oi_dest_n_2        char (4),  { dest. nota 2 }

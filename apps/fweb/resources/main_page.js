@@ -78,7 +78,7 @@ Fweb.mainPage = SC.Page.design({
 			
 	OrdersTableView: SC.TableView.design({
 		layout: { left: 10, right: 10, top: 10, bottom: 10 },
-		classNames: 'listTable', 
+		classNames: 'listTable',
 	  columns: [ 
 	    SC.TableColumn.create({ 
 	      key:   'num', 
@@ -111,6 +111,11 @@ Fweb.mainPage = SC.Page.design({
 	      label: 'Pagamento', 
 				width: 100,
 	    }),
+		   SC.TableColumn.create({ 
+	      key:   'formattedDateDelivery', 
+	      label: 'Spedizione',
+				width: 100,
+	    }),
 			SC.TableColumn.create({ 
 	      key:   'ddtCausale', 
 	      label: 'Cau.', 
@@ -128,7 +133,8 @@ Fweb.mainPage = SC.Page.design({
 	    })
 	  ],
 
-	  contentBinding: 'Fweb.ordersController.arrangedObjects', 
+	  contentBinding: 'Fweb.ordersController.arrangedObjects',
+		selectionBinding: 'Fweb.ordersController.selection',
 	  selectOnMouseDown: YES,
 	  exampleView: SC.TableRowView, 
 	  recordType: Fweb.Order,
@@ -139,7 +145,50 @@ Fweb.mainPage = SC.Page.design({
 	    } else {
 	      Fweb.ordersController.set('content', cont);        
 	    }
-		}    
+		},
+		
+		mouseDown: function(evt) {
+      var menuOptions = this._buildContextMenu();
+      var pane = SCUI.ContextMenuPane.create({
+        contentView: SC.View.design({}),
+        layout: { width: 194, height: 0 },
+        itemTitleKey: 'title',
+        itemTargetKey: 'target',
+        itemActionKey: 'action',
+        itemSeparatorKey: 'isSeparator',
+        itemIsEnabledKey: 'isEnabled',
+        items: menuOptions
+      });
+      pane.popup(this, evt); // pass in the mouse event so the pane can figure out where to put itself
+      return sc_super(); // or whatever you want to do
+		},
+		
+		_buildContextMenu: function() {
+	    var ret = [];
+				ret.push({
+	        title: "apri",
+	        icon: sc_static('resources/icons/table.png'),
+	        isEnabled: YES,
+	        target: 'Fweb.ordersController',
+	        action: 'showAlertPane'
+	      });
+				ret.push({
+	        title: "stampa",
+	        icon: sc_static('resources/icons/printer.png'),
+	        isEnabled: YES,
+	        target: 'Fweb.ordersController',
+	        action: 'showAlertPane'
+	      });
+				ret.push({
+	        title: "elimina",
+	        icon: sc_static('resources/icons/table_delete.png'),
+	        isEnabled: YES,
+	        target: 'Fweb.ordersController',
+	        action: 'showAlertPane'
+	      });
+	    return ret;
+	  },
+		
 	}),
 	  
 	OrdersTreeView: SC.LabelView.design({
