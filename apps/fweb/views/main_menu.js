@@ -23,7 +23,7 @@ Fweb.MainMenuView = SC.View.extend(
 		];
 		var subMenuOrdini = [
 			{ title: 'lista ordini', keyEquivalent: 'ctrl_shift_i', icon: sc_static('resources/icons/table.png'), target: 'Fweb.ordersController', action: 'showOrders', },
-			{ title: 'nuovo ordine', keyEquivalent: 'ctrl_shift_n', icon: sc_static('resources/icons/add.png'), target: 'Fweb.mainMenuController', action: 'showSorryPane', },
+			{ title: 'nuovo ordine', keyEquivalent: 'ctrl_shift_n', icon: sc_static('resources/icons/add.png'), target: 'Fweb.orderController', action: 'showOrder', },
 			{ title: 'ricerca', icon: sc_static('resources/icons/magnifier.png'), target: 'Fweb.mainMenuController', action: 'showSorryPane', },
 			{ title: 'report', icon: sc_static('resources/icons/table_multiple.png'), subMenu: subMenuOrdiniReport },
 			{ isSeparator: YES },

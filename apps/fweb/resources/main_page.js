@@ -40,8 +40,8 @@ Fweb.mainPage = SC.Page.design({
 			title: 'Nuovo',
 			toolTip: 'Inserimento nuovo ordine',
 			icon: sc_static('resources/icons/table_add.png'),
-			target: 'Fweb.mainMenuController',
-			action: 'showSorryPane',
+			target: 'Fweb.orderController',
+			action: 'showOrder',
 		}),
 		
 		FilterButtonView: SC.ButtonView.design({
@@ -70,7 +70,7 @@ Fweb.mainPage = SC.Page.design({
 	    itemTitleKey: 'title',
 	    itemValueKey: 'value',
 			itemIconKey: 'icon',
-     	userDefaultKey: "table"
+     	userDefaultKey: "userOrdersTabs"
 		}),
 
 	}),
@@ -91,7 +91,7 @@ Fweb.mainPage = SC.Page.design({
 				width: 100,
 	    }),
       SC.TableColumn.create({ 
-	      key:   'ragSocCli', 
+	      key:   'ragSocCli',
 	      label: 'Cliente', 
 				width: 100,
 	    }),
@@ -198,6 +198,59 @@ Fweb.mainPage = SC.Page.design({
 	OrdersPdfView: SC.LabelView.design({
     layout: { left: 10, right: 10, top: 10, bottom: 10 },
 		value: 'OrdersPdfView: una stampa in pdf (o html) formattata'
+	}),
+	
+	
+	// single Order view
+	OrderView: SC.View.design({
+		layout: { left: 0, right: 0, top: 0, bottom: 0 },
+		childViews: 'TitleView ButtonView OrderTabsView'.w(),
+		
+		TitleView: SC.LabelView.design({
+			layout: { top: 10, left: 20, width: 100, height: 24},
+			classNames: ['titleMainContainer'],
+			controlSize: SC.LARGE_CONTROL_SIZE,
+			value: 'Ordine'
+		}),
+		
+		ButtonView: SC.ButtonView.design({
+			layout: { top: 10, left: 150, width: 80, height: 24},
+			title: '???',
+			toolTip: '????????????',
+			icon: sc_static('resources/icons/error.png'),
+			target: 'Fweb.mainMenuController',
+			action: 'showSorryPane',
+		}),
+		
+		OrderTabsView: SC.TabView.design({
+   		layout: { left:10, right:10, top:30, bottom:10 },
+			value: 'OrderEditView',
+			items: [
+        { title: "Edit", value: "OrderEditView", icon: sc_static('resources/icons/table.png') },
+	      { title: "Table", value: "OrderTableView", icon: sc_static('resources/icons/text_list_bullets.png') },
+	      { title: "Pdf", value: "OrderPdfView", icon: sc_static('resources/icons/page_white_acrobat.png') }
+			],		
+	    itemTitleKey: 'title',
+	    itemValueKey: 'value',
+			itemIconKey: 'icon',
+     	userDefaultKey: "userOrderTabs"
+		}),
+
+	}),
+	
+	OrderEditView: SC.LabelView.design({
+    layout: { left: 10, right: 10, top: 10, bottom: 10 },
+		value: "OrderEditView: vista standard per l'inserimento/modifica' dell'ordine"
+	}),
+	
+	OrderTableView: SC.LabelView.design({
+    layout: { left: 10, right: 10, top: 10, bottom: 10 },
+		value: "OrderTableView: una vista a tabella dell'ordine"
+	}),
+	
+	OrderPdfView: SC.LabelView.design({
+    layout: { left: 10, right: 10, top: 10, bottom: 10 },
+		value: "OrderPdfView: una stampa in pdf (o html) formattata dell'ordine"
 	}),
 	
 });

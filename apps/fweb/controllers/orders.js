@@ -6,7 +6,7 @@
 
 /** @class
 
-  This controller manage all CRUD operations on orders
+  This controller manage list orders views and actions
 
   @extends SC.ArrayController
 */
