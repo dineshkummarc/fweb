@@ -235,7 +235,8 @@ Fweb.MainMenuView = SC.View.extend(
 					toolTip: 'Apre una nuova tab con una pagina nuova di fweb.',
 					icon: sc_static('resources/icons/application_add.png'),
 					mouseDown: function() {
-	          window.open('http://localhost:4020/fweb','_newtab');
+	          window.open('http://localhost:4020/fweb','_newtab'); // if local
+		        // window.open('http://fweb.f5lab.com','_newtab'); // if build
 	        },
 				}),
 	
