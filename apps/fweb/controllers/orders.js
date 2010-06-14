@@ -13,13 +13,12 @@
 Fweb.ordersController = SC.ArrayController.create(
 /** @scope Fweb.ordersController.prototype */ {
 
-	nowShowing: "",
 	filterPane: null,
 	ordersPopupMenu: null,
 	alertPane: null,
 	
 	showOrders: function() {
-		this.set('nowShowing', 'OrdersView')
+		Fweb.mainMenuController.set('nowShowing', 'OrdersView')
 	},
 	
 	showFilterPane: function() {

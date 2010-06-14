@@ -19,8 +19,7 @@ Fweb.mainPage = SC.Page.design({
 		
 		MainContainerView: SC.ContainerView.design({
 		  layout: { left: 0, right: 0, top: 46, bottom: 0 },
-			nowShowingBinding: 'Fweb.ordersController.nowShowing', // così si fa !!! bindi la vista ad una variabile i un controller !!!
-			// nowShowing: "OrdersTableView"
+			nowShowingBinding: 'Fweb.mainMenuController.nowShowing',
 		})
 
 	}),

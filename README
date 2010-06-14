@@ -21,11 +21,10 @@ TODO:
  DONE orders page with tabs for table, tree and pdf
  DONE filters panel
  DONE info unsupported-option panel as default action
+ DONE complete and format orders table, sorting and style ok.
  + TODO:
- 		3) complete and format orders table
  		navigation !? barmenu? side-itunes-menu? how and where from welcome ? 
  		4) area's pages (sort of multi-step wizard: welcome->area->action)
-		table: date formatting ? styling? sorting?
  		orders controller (CRUD actions: list index, new, edit, delete)
 		orders views
  		orders list (for index: listView ? tableView ? ...)

@@ -13,6 +13,7 @@
 Fweb.mainMenuController = SC.ObjectController.create(
 /** @scope Fweb.mainMenuController.prototype */ {
 
+	nowShowing: "", // binded to the view in the main container.
 	sorryPane: null,
 	
 	print: function() {
