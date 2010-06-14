@@ -24,6 +24,7 @@ Fweb.mainPage = SC.Page.design({
 
 	}),
 	
+	// ORDERS LIST View
 	OrdersView: SC.View.design({
 		layout: { left: 0, right: 0, top: 0, bottom: 0 },
 		childViews: 'TitleView AddButtonView FilterButtonView FilterDescView OrdersTabsView'.w(),
@@ -208,7 +209,7 @@ Fweb.mainPage = SC.Page.design({
 	}),
 	
 	
-	// single Order view
+	// SINGLE ORDER view
 	OrderView: SC.View.design({
 		layout: { left: 0, right: 0, top: 0, bottom: 0 },
 		childViews: 'TitleView ButtonView OrderTabsView'.w(),
