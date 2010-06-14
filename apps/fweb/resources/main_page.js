@@ -61,7 +61,7 @@ Fweb.mainPage = SC.Page.design({
 		
 		OrdersTabsView: SC.TabView.design({
    		layout: { left:10, right:10, top:30, bottom:10 },
-			value: 'OrdersTableView',
+			nowShowing: 'OrdersTableView',
 			items: [
         { title: "Table", value: "OrdersTableView", icon: sc_static('resources/icons/table.png') },
 	      { title: "Tree", value: "OrdersTreeView", icon: sc_static('resources/icons/text_list_bullets.png') },
@@ -166,7 +166,14 @@ Fweb.mainPage = SC.Page.design({
 	    var ret = [];
 				ret.push({
 	        title: "apri",
-	        icon: sc_static('resources/icons/table.png'),
+	        icon: sc_static('resources/icons/table_edit.png'),
+	        isEnabled: YES,
+	        target: 'Fweb.ordersController',
+	        action: 'showAlertPane'
+	      });
+	      ret.push({
+	        title: "clona",
+	        icon: sc_static('resources/icons/table_multiple.png'),
 	        isEnabled: YES,
 	        target: 'Fweb.ordersController',
 	        action: 'showAlertPane'
@@ -224,10 +231,10 @@ Fweb.mainPage = SC.Page.design({
 		
 		OrderTabsView: SC.TabView.design({
    		layout: { left:10, right:10, top:30, bottom:10 },
-			value: 'OrderEditView',
+			nowShowing: 'OrderEditView',
 			items: [
-        { title: "Edit", value: "OrderEditView", icon: sc_static('resources/icons/table.png') },
-	      { title: "Table", value: "OrderTableView", icon: sc_static('resources/icons/text_list_bullets.png') },
+        { title: "Edit", value: "OrderEditView", icon: sc_static('resources/icons/page_white.png') },
+	      { title: "Table", value: "OrderTableView", icon: sc_static('resources/icons/table.png') },
 	      { title: "Pdf", value: "OrderPdfView", icon: sc_static('resources/icons/page_white_acrobat.png') }
 			],		
 	    itemTitleKey: 'title',
