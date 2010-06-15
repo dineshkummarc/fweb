@@ -6,7 +6,7 @@
 
 /** @class
 
-  (Document Your Controller Here)
+  User data controller
 
   @extends SC.Object
 */

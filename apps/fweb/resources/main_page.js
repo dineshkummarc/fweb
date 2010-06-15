@@ -169,29 +169,29 @@ Fweb.mainPage = SC.Page.design({
 	        title: "apri",
 	        icon: sc_static('resources/icons/table_edit.png'),
 	        isEnabled: YES,
-	        target: 'Fweb.ordersController',
-	        action: 'showAlertPane'
+	        target: 'Fweb.orderController',
+	        action: 'showOrder'
 	      });
 	      ret.push({
 	        title: "clona",
 	        icon: sc_static('resources/icons/table_multiple.png'),
 	        isEnabled: YES,
-	        target: 'Fweb.ordersController',
-	        action: 'showAlertPane'
+	        target: 'Fweb.orderController',
+	        action: 'showSorryPane'
 	      });
 				ret.push({
 	        title: "stampa",
 	        icon: sc_static('resources/icons/printer.png'),
 	        isEnabled: YES,
-	        target: 'Fweb.ordersController',
-	        action: 'showAlertPane'
+	        target: 'Fweb.orderController',
+	        action: 'showSorryPane'
 	      });
 				ret.push({
 	        title: "elimina",
 	        icon: sc_static('resources/icons/table_delete.png'),
 	        isEnabled: YES,
-	        target: 'Fweb.ordersController',
-	        action: 'showAlertPane'
+	        target: 'Fweb.orderController',
+	        action: 'showSorryPane'
 	      });
 	    return ret;
 	  },

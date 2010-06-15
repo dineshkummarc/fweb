@@ -23,9 +23,14 @@ TODO:
  DONE info unsupported-option panel as default action
  DONE complete and format orders table, sorting and style ok.
  + TODO:
- 		new/view/edit order ( testa + righe ) []
+ 		new/view/edit order ( testa + righe )
+ 			> how generate new guid ? see http://groups.google.com/group/sproutcore/browse_thread/thread/af45cd5d964d4b91/bf6c9bc2f2c34e3e?lnk=gst&q=CREATERECORD#bf6c9bc2f2c34e3e
+ 			> I need nested records for head and rows
+ 			> write the sintetic view, SC.ListView with head and rows data
+ 			> onclick on head/row open a PickupPane with form
+ 			> set an auto 
  		navigation !? barmenu? side-itunes-menu? how and where from welcome ? 
- 		4) area's pages (sort of multi-step wizard: welcome->area->action)	
+ 		area's pages (sort of multi-step wizard: welcome->area->action)	
 ...
 
 BUGS:

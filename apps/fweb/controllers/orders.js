@@ -56,7 +56,6 @@ Fweb.ordersController = SC.ArrayController.create(
 	showAlertPane: function(message, subMessage) {
 		if (message==undefined || message=='') { message = 'Alert!'};
 		if (subMessage==undefined || subMessage=='') { subMessage = 'something happened.'};
-		subMessage = Fweb.ordersController.getPath('selection');
     var pane = SC.AlertPane.warn(message, subMessage, '', "OK", this); 
     pane.append();
     this.set('alertPane', pane);
