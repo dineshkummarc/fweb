@@ -42,7 +42,7 @@ Fweb.mainPage = SC.Page.design({
 			toolTip: 'Inserimento nuovo ordine',
 			icon: sc_static('resources/icons/table_add.png'),
 			target: 'Fweb.orderController',
-			action: 'showOrder',
+			action: 'showNewOrder',
 		}),
 		
 		FilterButtonView: SC.ButtonView.design({
@@ -170,7 +170,7 @@ Fweb.mainPage = SC.Page.design({
 	        icon: sc_static('resources/icons/table_edit.png'),
 	        isEnabled: YES,
 	        target: 'Fweb.orderController',
-	        action: 'showOrder'
+	        action: "showOrder"
 	      });
 	      ret.push({
 	        title: "clona",
