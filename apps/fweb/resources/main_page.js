@@ -212,20 +212,35 @@ Fweb.mainPage = SC.Page.design({
 	// SINGLE ORDER view
 	OrderView: SC.View.design({
 		layout: { left: 0, right: 0, top: 0, bottom: 0 },
-		childViews: 'TitleView ButtonView OrderTabsView'.w(),
+		childViews: 'TitleView OrderButtonsView OrderTabsView'.w(),
 		
 		TitleView: SC.LabelView.design({
-			layout: { top: 10, left: 20, width: 100, height: 24},
+			layout: { top: 10, left: 20, width: 200, height: 24},
 			classNames: ['titleMainContainer'],
 			controlSize: SC.LARGE_CONTROL_SIZE,
-			value: 'Ordine'
+			valueBinding: "Fweb.orderController.title"
 		}),
 		
-		ButtonView: SC.ButtonView.design({
-			layout: { top: 10, left: 150, width: 80, height: 24},
-			title: '???',
-			toolTip: '????????????',
-			icon: sc_static('resources/icons/error.png'),
+		OrderButtonsView: SC.SegmentedView.design({
+			layout: { top: 10, right: 20, width: 200, height: 24 },
+			items: [
+				{ title: '', value: 'save', icon: sc_static('resources/icons/disk.png'), target: 'Fweb.mainMenuController', action: 'showSorryPane' },
+				{ title: '', value: 'reset', icon: sc_static('resources/icons/arrow_refresh.png'), target: 'Fweb.mainMenuController', action: 'showSorryPane' },
+				{ title: '', value: 'delete', icon: sc_static('resources/icons/delete.png'), target: 'Fweb.mainMenuController', action: 'showSorryPane' },
+				{ title: '', value: 'orders', icon: sc_static('resources/icons/text_list_bullets.png'), target: 'Fweb.mainMenuController', action: 'showSorryPane' },
+			],
+      itemTitleKey: 'title',
+      itemValueKey: 'value',
+      itemIconKey: 'icon',
+      itemTargetKey: 'target',
+      itemActionKey: 'action'
+		}),
+		
+		OrdersButtonView: SC.ButtonView.design({
+			layout: { top: 10, left: 440, width: 70, height: 24},
+			title: 'Orders',
+			toolTip: "Torna alla lista degli ordini",
+			icon: sc_static('resources/icons/ext_list_bullets.png'),
 			target: 'Fweb.mainMenuController',
 			action: 'showSorryPane',
 		}),
