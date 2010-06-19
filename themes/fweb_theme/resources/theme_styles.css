@@ -151,3 +151,8 @@
 	background: static_url('fweb_images/up-down.png') bottom right no-repeat !important;
 	background-color: #AAFFAA !important;
 }
+
+/* ORDER VIEW */
+.ord-field-label {
+	font-size: 10px !important;
+}
