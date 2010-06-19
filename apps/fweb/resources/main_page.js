@@ -227,7 +227,7 @@ Fweb.mainPage = SC.Page.design({
 				{ title: '', value: 'save', icon: sc_static('resources/icons/disk.png'), target: 'Fweb.mainMenuController', action: 'showSorryPane' },
 				{ title: '', value: 'reset', icon: sc_static('resources/icons/arrow_refresh.png'), target: 'Fweb.mainMenuController', action: 'showSorryPane' },
 				{ title: '', value: 'delete', icon: sc_static('resources/icons/delete.png'), target: 'Fweb.mainMenuController', action: 'showSorryPane' },
-				{ title: '', value: 'orders', icon: sc_static('resources/icons/text_list_bullets.png'), target: 'Fweb.mainMenuController', action: 'showSorryPane' },
+				{ title: '', value: 'orders', icon: sc_static('resources/icons/text_list_bullets.png'), target: 'Fweb.ordersController', action: 'showOrders' },
 			],
       itemTitleKey: 'title',
       itemValueKey: 'value',
@@ -261,9 +261,8 @@ Fweb.mainPage = SC.Page.design({
 
 	}),
 	
-	OrderEditView: SC.LabelView.design({
+	OrderEditView: Fweb.OrderView.design({
     layout: { left: 10, right: 10, top: 10, bottom: 10 },
-		value: "OrderEditView: vista standard per l'inserimento/modifica' dell'ordine"
 	}),
 	
 	OrderTableView: SC.LabelView.design({

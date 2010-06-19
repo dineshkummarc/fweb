@@ -22,7 +22,7 @@ Fweb.Order = SC.Record.extend(
 	orderRows: SC.Record.toMany("Fweb.OrderRow", {
 	   inverse: "order", isMaster: YES
   }),
-
+	// general data
 	num: SC.Record.attr(String),
 	date: SC.Record.attr(SC.DateTime),
 	clientRef: SC.Record.attr(String),
@@ -32,6 +32,7 @@ Fweb.Order = SC.Record.extend(
 	ordType: SC.Record.attr(String),
 	ordDesc: SC.Record.attr(String),
 	operator: SC.Record.attr(String),
+	// destination data
 	destination: SC.Record.attr(String),
 	nation: SC.Record.attr(String),
 	address: SC.Record.attr(String),
@@ -41,6 +42,7 @@ Fweb.Order = SC.Record.extend(
 	tel: SC.Record.attr(String),
 	fax: SC.Record.attr(String),
 	cell: SC.Record.attr(String),
+	// ddt data
 	ddtCausale: SC.Record.attr(String),
 	ddtPorto: SC.Record.attr(String),
 	ddtTrasporto: SC.Record.attr(String),
@@ -48,6 +50,7 @@ Fweb.Order = SC.Record.extend(
 	ddtZonaVettore: SC.Record.attr(String),
 	ddtModoTrasporto: SC.Record.attr(String),
 	zone: SC.Record.attr(String),
+	// general data 
 	agent: SC.Record.attr(String),
 	list: SC.Record.attr(String),
 	valute: SC.Record.attr(String),

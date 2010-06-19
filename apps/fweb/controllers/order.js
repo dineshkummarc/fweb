@@ -27,8 +27,6 @@ Fweb.orderController = SC.ArrayController.create(
 		var nestedOrder = nestedStore.find(order); // nested record of Order
 		this.set('nestedStore', nestedStore);
 		this.set('nestedOrder', nestedOrder);
-		alert("order="+order);
-		alert("nestedOrder="+nestedOrder);
 	},
 	
 	// load an order
@@ -41,8 +39,12 @@ Fweb.orderController = SC.ArrayController.create(
 		var nestedOrder = nestedStore.find(order); // nested record of Order
 		this.set('nestedStore', nestedStore);
 		this.set('nestedOrder', nestedOrder);
-		alert("order="+order);
-		alert("nestedOrder="+nestedOrder);
+		// load rows data in content of this controller
+		var rowsQuery = SC.Query.local(Fweb.OrderRow, {
+		   conditions: 'order = {order}',
+		   order: order,
+		});
+		this.set('content',Fweb.store.find(rowsQuery));
 	},
 	
 	showNewOrder: function() {
