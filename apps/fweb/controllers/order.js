@@ -42,9 +42,9 @@ Fweb.orderController = SC.ArrayController.create(
 		// load rows data in content of this controller
 		var rowsQuery = SC.Query.local(Fweb.OrderRow, {
 		   conditions: 'order = {order}',
-		   order: order,
+		   order: nestedOrder,
 		});
-		this.set('content',Fweb.store.find(rowsQuery));
+		this.set('content',nestedStore.find(rowsQuery));
 	},
 	
 	showNewOrder: function() {
