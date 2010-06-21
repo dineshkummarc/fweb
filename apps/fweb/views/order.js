@@ -62,12 +62,18 @@ Fweb.OrderView = SC.View.extend(
 			SC.View.design({
 		    layout: { left: 0, right: 0, top: 60, height: 20 },
 				classNames: ['ord-rows-labels'],
-				childViews: 'rowNumL'.w(),
+				childViews: 'rowNumL quantL'.w(),
 				
 				rowNumL: SC.LabelView.design({
 					layout: { left: 0, top: 2, height: 16, width: 60 },
 					classNames: ['ord-field-label'],
 					value: 'riga',
+				}),
+				
+				quantL: SC.LabelView.design({
+					layout: { left: 70, top: 2, height: 16, width: 60 },
+					classNames: ['ord-field-label'],
+					value: 'quantità',
 				}),
 				
 			})
@@ -85,7 +91,8 @@ Fweb.OrderView = SC.View.extend(
 				  contentBinding: 'Fweb.orderController.arrangedObjects',
 				  selectionBinding: 'Fweb.orderController.selection',
 					exampleView: Fweb.OrderRowView,
-					rowHeight: 24
+					rowHeight: 24,
+					contentValueKey: 'desc1',
 				}),
 				
 			})

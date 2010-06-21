@@ -21,11 +21,16 @@ Fweb.OrderRowView = SC.View.extend(
 			SC.View.design({
 		    layout: { left: 0, right: 0, top: 0, height: 50 },
 				classNames: ['ord-row'],
-				childViews: 'rowNum'.w(),
+				childViews: 'rowNum quant'.w(),
 							
 				rowNum: SC.LabelView.design({
 					layout: { left: 0, top: 4, height: 20, width: 60 },
 					value: row.get('rowNum'),
+				}),
+				
+				quant: SC.TextFieldView.design({
+					layout: { left: 70, top: 4, height: 20, width: 60 },
+					valueBinding: 'Fweb.orderController.content.quant',
 				}),
 				
 			})
