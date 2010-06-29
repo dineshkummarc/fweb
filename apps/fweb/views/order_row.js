@@ -30,7 +30,8 @@ Fweb.OrderRowView = SC.View.extend(
 				
 				quant: SC.TextFieldView.design({
 					layout: { left: 70, top: 4, height: 20, width: 60 },
-					valueBinding: 'Fweb.orderController.content.quant',
+					value: this.get('content').get('quant'),
+					//value: row.get('quant'),
 				}),
 				
 			})

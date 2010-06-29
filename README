@@ -38,6 +38,7 @@ BUGS:
  - don't work in IE
 
 FREE ideas:
+* autosave on/off on complex form
 * provare anche un menù a barra laterale alla iTunes + multi colonna alla finder...
 * creare un model Sede per avere infiniti indirizzi & riferimenti... anche per le destinazioni alternative ! Tipo: sede principale, sede legale, magazzino, destinaz. alternativa ecc ecc...
 * some doc(report in pdf for example) could be open in modal pane, with buttons to send to page, new tab, printer ecc... (a visual field S/V/X/A + parameters of actual F12)
