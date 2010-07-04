@@ -19,12 +19,12 @@ Fweb.OrderView = SC.View.extend(
 		// HEAD of order
   	view = this.createChildView(
 			SC.View.design({
-		    layout: { left: 0, right: 0, top: 0, height: 50 },
+		    layout: { left: 0, right: 0, top: 0, height: 120 },
 				classNames: ['ord-head'],
-				childViews: 'num date ragSocCli clientRef dateClientRef dateDelivery ordStatus ordType ordDesc operator numL dateL ragSocCliL clientRefL dateClientRefL dateDeliveryL ordStatusL ordTypeL ordDescL operatorL'.w(),
+				childViews: 'num date ragSocCli clientRef dateClientRef dateDelivery ordStatus ordType ordDesc operator destination address city cap prov nation tel fax cell ddtCausale ddtPorto ddtTrasporto ddtVettore ddtZonaVettore ddtModoTrasporto agent list valute numL dateL ragSocCliL clientRefL dateClientRefL dateDeliveryL ordStatusL ordTypeL ordDescL operatorL destinationL addressL cityL capL provL nationL telL faxL cellL ddtCausaleL ddtPortoL ddtTrasportoL ddtVettoreL ddtZonaVettoreL ddtModoTrasportoL agent listL valuteL'.w(),
 				// general data - Label
 				numL: SC.LabelView.design({
-					layout: { left: 0, top: 2, height: 16, width: 60 },
+					layout: { left: 0, top: 2, height: 16, width: 80 },
 					classNames: ['ord-field-label'],
 					value: 'numero',
 				}),
@@ -73,7 +73,111 @@ Fweb.OrderView = SC.View.extend(
 					classNames: ['ord-field-label'],
 					value: 'operatore',
 				}),
-				// general data - Field
+				// destination data - Label
+				destinationL: SC.LabelView.design({
+					layout: { left: 0, top: 42, height: 20, width: 80 },
+					classNames: ['ord-field-label'],
+					value: 'destinazione'
+				}),
+				addressL: SC.LabelView.design({
+					layout: { left: 160, top: 42, height: 20, width: 80 },
+					classNames: ['ord-field-label'],
+					value: 'indirizzo',
+				}),
+				cityL: SC.LabelView.design({
+					layout: { left: 270, top: 42, height: 20, width: 80 },
+					classNames: ['ord-field-label'],
+					value: 'città',
+				}),
+				capL: SC.LabelView.design({
+					layout: { left: 380, top: 42, height: 20, width: 80 },
+					classNames: ['ord-field-label'],
+					value: 'cap',
+				}),
+				provL: SC.LabelView.design({
+					layout: { left: 440, top: 42, height: 20, width: 80 },
+					classNames: ['ord-field-label'],
+					value: 'pr',
+				}),
+				nationL: SC.LabelView.design({
+					layout: { left: 480, top: 42, height: 20, width: 80 },
+					classNames: ['ord-field-label'],
+					value: 'nazione',
+				}),
+				telL: SC.LabelView.design({
+					layout: { left: 590, top: 42, height: 20, width: 80 },
+					classNames: ['ord-field-label'],
+					value: 'telefono',
+				}),
+				faxL: SC.LabelView.design({
+					layout: { left: 700, top: 42, height: 20, width: 80 },
+					classNames: ['ord-field-label'],
+					value: 'fax',
+				}),
+				cellL: SC.LabelView.design({
+					layout: { left: 810, top: 42, height: 20, width: 80 },
+					classNames: ['ord-field-label'],
+					value: 'cellulare',
+				}),
+				// ddt data - Fields
+				ddtCausaleL: SC.LabelView.design({
+					layout: { left: 0, top: 82, height: 20, width: 80 },
+					classNames: ['ord-field-label'],
+					value: 'causale',
+				}),
+				ddtPortoL: SC.LabelView.design({
+					layout: { left: 110, top: 82, height: 20, width: 80 },
+					classNames: ['ord-field-label'],
+					value: 'porto',
+				}),
+				ddtTrasportoL: SC.LabelView.design({
+					layout: { left: 170, top: 82, height: 20, width: 80 },
+					classNames: ['ord-field-label'],
+					value: 'trasporto',
+				}),
+				ddtVettoreL: SC.LabelView.design({
+					layout: { left: 230, top: 82, height: 20, width: 80 },
+					classNames: ['ord-field-label'],
+					value: 'vettore',
+				}),
+				ddtZonaVettoreL: SC.LabelView.design({
+					layout: { left: 340, top: 82, height: 20, width: 80 },
+					classNames: ['ord-field-label'],
+					value: 'zona vett.',
+				}),
+				ddtModoTrasportoL: SC.LabelView.design({
+					layout: { left: 400, top: 82, height: 20, width: 80 },
+					classNames: ['ord-field-label'],
+					value: 'modo',
+				}),
+				zoneL: SC.LabelView.design({
+					layout: { left: 460, top: 82, height: 20, width: 80 },
+					classNames: ['ord-field-label'],
+					value: 'zona',
+				}),
+				// general data - Labels
+				agentL: SC.LabelView.design({
+					layout: { left: 600, top: 82, height: 20, width: 80 },
+					classNames: ['ord-field-label'],
+					value: 'agente',
+				}),
+				listL: SC.LabelView.design({
+					layout: { left: 710, top: 82, height: 20, width: 80 },
+					classNames: ['ord-field-label'],
+					value: 'listino',
+				}),
+				valuteL: SC.LabelView.design({
+					layout: { left: 820, top: 82, height: 20, width: 80 },
+					classNames: ['ord-field-label'],
+					value: 'listino',
+				}),
+				modPagL: SC.LabelView.design({
+					layout: { left: 880, top: 82, height: 20, width: 80 },
+					classNames: ['ord-field-label'],
+					value: 'pagamento',
+				}),
+				
+				// general data - Fields
 				num: SC.TextFieldView.design({
 					layout: { left: 0, top: 20, height: 20, width: 60 },
 					valueBinding: 'Fweb.orderController.nestedOrder.num',
@@ -114,32 +218,89 @@ Fweb.OrderView = SC.View.extend(
 					layout: { left: 800, top: 20, height: 20, width: 50 },
 					valueBinding: 'Fweb.orderController.nestedOrder.operator',
 				}),
-				
-				/*
-				// destination data
-				destination: SC.Record.attr(String),
-				nation: SC.Record.attr(String),
-				address: SC.Record.attr(String),
-				city: SC.Record.attr(String),
-				cap: SC.Record.attr(String),
-				prov: SC.Record.attr(String),
-				tel: SC.Record.attr(String),
-				fax: SC.Record.attr(String),
-				cell: SC.Record.attr(String),
-				// ddt data
-				ddtCausale: SC.Record.attr(String),
-				ddtPorto: SC.Record.attr(String),
-				ddtTrasporto: SC.Record.attr(String),
-				ddtVettore: SC.Record.attr(String),
-				ddtZonaVettore: SC.Record.attr(String),
-				ddtModoTrasporto: SC.Record.attr(String),
-				zone: SC.Record.attr(String),
-				// general data 
-				agent: SC.Record.attr(String),
-				list: SC.Record.attr(String),
-				valute: SC.Record.attr(String),
-				modPag: SC.Record.attr(String),
-				*/
+				// destination data - Field
+				destination: SC.TextFieldView.design({
+					layout: { left: 0, top: 60, height: 20, width: 150 },
+					valueBinding: 'Fweb.orderController.nestedOrder.destination',
+				}),
+				address: SC.TextFieldView.design({
+					layout: { left: 160, top: 60, height: 20, width: 100 },
+					valueBinding: 'Fweb.orderController.nestedOrder.address',
+				}),
+				city: SC.TextFieldView.design({
+					layout: { left: 270, top: 60, height: 20, width: 100 },
+					valueBinding: 'Fweb.orderController.nestedOrder.city',
+				}),
+				cap: SC.TextFieldView.design({
+					layout: { left: 380, top: 60, height: 20, width: 50 },
+					valueBinding: 'Fweb.orderController.nestedOrder.cap',
+				}),
+				prov: SC.TextFieldView.design({
+					layout: { left: 440, top: 60, height: 20, width: 30 },
+					valueBinding: 'Fweb.orderController.nestedOrder.prov',
+				}),
+				nation: SC.TextFieldView.design({
+					layout: { left: 480, top: 60, height: 20, width: 100 },
+					valueBinding: 'Fweb.orderController.nestedOrder.nation',
+				}),
+				tel: SC.TextFieldView.design({
+					layout: { left: 590, top: 60, height: 20, width: 100 },
+					valueBinding: 'Fweb.orderController.nestedOrder.tel',
+				}),
+				fax: SC.TextFieldView.design({
+					layout: { left: 700, top: 60, height: 20, width: 100 },
+					valueBinding: 'Fweb.orderController.nestedOrder.fax',
+				}),
+				cell: SC.TextFieldView.design({
+					layout: { left: 810, top: 60, height: 20, width: 100 },
+					valueBinding: 'Fweb.orderController.nestedOrder.cell',
+				}),
+				// ddt data - Fields
+				ddtCausale: SC.TextFieldView.design({
+					layout: { left: 0, top: 100, height: 20, width: 100 },
+					valueBinding: 'Fweb.orderController.nestedOrder.ddtCausale',
+				}),
+				ddtPorto: SC.TextFieldView.design({
+					layout: { left: 110, top: 100, height: 20, width: 50 },
+					valueBinding: 'Fweb.orderController.nestedOrder.ddtPorto',
+				}),
+				ddtTrasporto: SC.TextFieldView.design({
+					layout: { left: 170, top: 100, height: 20, width: 50 },
+					valueBinding: 'Fweb.orderController.nestedOrder.ddtTrasporto',
+				}),
+				ddtVettore: SC.TextFieldView.design({
+					layout: { left: 230, top: 100, height: 20, width: 100 },
+					valueBinding: 'Fweb.orderController.nestedOrder.ddtVettore',
+				}),
+				ddtZonaVettore: SC.TextFieldView.design({
+					layout: { left: 340, top: 100, height: 20, width: 50 },
+					valueBinding: 'Fweb.orderController.nestedOrder.ddtZonaVettore',
+				}),
+				ddtModoTrasporto: SC.TextFieldView.design({
+					layout: { left: 400, top: 100, height: 20, width: 50 },
+					valueBinding: 'Fweb.orderController.nestedOrder.ddtModoTrasporto',
+				}),
+				zone: SC.TextFieldView.design({
+					layout: { left: 460, top: 100, height: 20, width: 50 },
+					valueBinding: 'Fweb.orderController.nestedOrder.zone',
+				}),
+				// general data - Fields
+				agent: SC.TextFieldView.design({
+					layout: { left: 600, top: 100, height: 20, width: 100 },
+					valueBinding: 'Fweb.orderController.nestedOrder.agent',
+				}),
+				list: SC.TextFieldView.design({
+					layout: { left: 710, top: 100, height: 20, width: 100 },
+					valueBinding: 'Fweb.orderController.nestedOrder.list',
+				}),
+				valute: SC.TextFieldView.design({
+					layout: { left: 820, top: 100, height: 20, width: 50 },
+					valueBinding: 'Fweb.orderController.nestedOrder.valute',
+				}),
+				modPag: SC.TextFieldView.design({
+					layout: { left: 880, top: 100, height: 20, width: 200 },
+					valueBinding: 'Fweb.orderController.nestedOrder.modPag',
+				}),
 				
 			})
 		);
@@ -148,7 +309,7 @@ Fweb.OrderView = SC.View.extend(
 		// rows labels
 		view = this.createChildView(
 			SC.View.design({
-		    layout: { left: 0, right: 0, top: 60, height: 20 },
+		    layout: { left: 0, right: 0, top: 132, height: 20 },
 				classNames: ['ord-rows-labels'],
 				childViews: 'rowNumL quantL'.w(),
 				
@@ -171,7 +332,7 @@ Fweb.OrderView = SC.View.extend(
 		// ROWS of order
   	view = this.createChildView(
 			SC.View.design({
-		    layout: { left: 0, right: 0, top: 80, bottom: 10 },
+		    layout: { left: 0, right: 0, top: 150, bottom: 10 },
 				classNames: ['ord-rows'],
 				childViews: 'rows'.w(),
 				
