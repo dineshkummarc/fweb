@@ -21,7 +21,7 @@ Fweb.OrderView = SC.View.extend(
 			SC.View.design({
 		    layout: { left: 0, right: 0, top: 0, height: 120 },
 				classNames: ['ord-head'],
-				childViews: 'num date ragSocCli clientRef dateClientRef dateDelivery ordStatus ordType ordDesc operator destination address city cap prov nation tel fax cell ddtCausale ddtPorto ddtTrasporto ddtVettore ddtZonaVettore ddtModoTrasporto agent list valute numL dateL ragSocCliL clientRefL dateClientRefL dateDeliveryL ordStatusL ordTypeL ordDescL operatorL destinationL addressL cityL capL provL nationL telL faxL cellL ddtCausaleL ddtPortoL ddtTrasportoL ddtVettoreL ddtZonaVettoreL ddtModoTrasportoL agent listL valuteL'.w(),
+				childViews: 'num date ragSocCli clientRef dateClientRef dateDelivery ordStatus ordType ordDesc operator destination address city cap prov nation tel fax cell ddtCausale ddtPorto ddtTrasporto ddtVettore ddtZonaVettore ddtModoTrasporto zone agent list valute modPag numL dateL ragSocCliL clientRefL dateClientRefL dateDeliveryL ordStatusL ordTypeL ordDescL operatorL destinationL addressL cityL capL provL nationL telL faxL cellL ddtCausaleL ddtPortoL ddtTrasportoL ddtVettoreL ddtZonaVettoreL ddtModoTrasportoL zoneL agentL listL valuteL modPagL'.w(),
 				// general data - Label
 				numL: SC.LabelView.design({
 					layout: { left: 0, top: 2, height: 16, width: 80 },
