@@ -311,18 +311,62 @@ Fweb.OrderView = SC.View.extend(
 			SC.View.design({
 		    layout: { left: 0, right: 0, top: 132, height: 20 },
 				classNames: ['ord-rows-labels'],
-				childViews: 'rowNumL quantL'.w(),
+				childViews: 'rowNumL quantL quantEvasaL artL desc1L lengthL widthL heightL datConPrevL priceL noteL'.w(),
 				
 				rowNumL: SC.LabelView.design({
-					layout: { left: 0, top: 2, height: 16, width: 60 },
+					layout: { left: 0, top: 0, height: 16, width: 60 },
 					classNames: ['ord-field-label'],
 					value: 'riga',
 				}),
-				
 				quantL: SC.LabelView.design({
-					layout: { left: 70, top: 2, height: 16, width: 60 },
+					layout: { left: 30, top: 0, height: 16, width: 60 },
 					classNames: ['ord-field-label'],
 					value: 'quantità',
+				}),
+				quantEvasaL: SC.LabelView.design({
+					layout: { left: 90, top: 0, height: 16, width: 60 },
+					classNames: ['ord-field-label'],
+					value: 'evasa',
+				}),
+				artL: SC.LabelView.design({
+					layout: { left: 150, top: 0, height: 16, width: 60 },
+					classNames: ['ord-field-label'],
+					value: 'articolo',
+				}),
+				desc1L: SC.LabelView.design({
+					layout: { left: 260, top: 0, height: 16, width: 60 },
+					classNames: ['ord-field-label'],
+					value: 'descrizione',
+				}),
+				lengthL: SC.LabelView.design({
+					layout: { left: 470, top: 0, height: 16, width: 60 },
+					classNames: ['ord-field-label'],
+					value: 'lunghezza',
+				}),
+				widthL: SC.LabelView.design({
+					layout: { left: 530, top: 0, height: 16, width: 60 },
+					classNames: ['ord-field-label'],
+					value: 'larghezza',
+				}),
+				heightL: SC.LabelView.design({
+					layout: { left: 590, top: 0, height: 16, width: 60 },
+					classNames: ['ord-field-label'],
+					value: 'altezza',
+				}),
+				datConPrevL: SC.LabelView.design({
+					layout: { left: 650, top: 0, height: 16, width: 60 },
+					classNames: ['ord-field-label'],
+					value: 'consegna',
+				}),
+				priceL: SC.LabelView.design({
+					layout: { left: 740, top: 0, height: 16, width: 60 },
+					classNames: ['ord-field-label'],
+					value: 'prezzo EURO',
+				}),
+				noteL: SC.LabelView.design({
+					layout: { left: 830, top: 0, height: 16, width: 60 },
+					classNames: ['ord-field-label'],
+					value: 'note',
 				}),
 				
 			})
@@ -340,7 +384,7 @@ Fweb.OrderView = SC.View.extend(
 				  contentBinding: 'Fweb.orderController.arrangedObjects',
 				  selectionBinding: 'Fweb.orderController.selection',
 					exampleView: Fweb.OrderRowView,
-					rowHeight: 24,
+					rowHeight: 30,
 					contentValueKey: 'desc1',
 				}),
 				
