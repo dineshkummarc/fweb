@@ -302,6 +302,16 @@ Fweb.OrderView = SC.View.extend(
 					valueBinding: 'Fweb.orderController.nestedOrder.modPag',
 				}),
 				
+				mouseDown: function(evt) {
+					alert('mouseDown on .ord-head');
+				},
+				mouseEntered: function(evt) {
+					alert('mouseEntered on .ord-head');
+				},
+				mouseOut: function(evt) {
+					alert('mouseOut on .ord-head');
+				}
+				
 			})
 		);
 		childViews.push(view);
