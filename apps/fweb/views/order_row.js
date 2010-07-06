@@ -68,6 +68,10 @@ Fweb.OrderRowView = SC.View.extend(
 					valueBinding: '.parentView.parentView.content.note',
 				}),
 				
+				doubleClick: function(evt) {
+					alert('double click on .ord-row');
+				},
+				
 				/*																					*** ROW *********************************
 																										rowNum: SC.Record.attr(Number),
 				origRowNum: SC.Record.attr(Number),
