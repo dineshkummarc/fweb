@@ -309,7 +309,6 @@ Fweb.OrderView = SC.View.extend(
 			})
 		);
 		childViews.push(view);
-		);
 		
 		// rows labels
 		view = this.createChildView(
