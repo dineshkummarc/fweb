@@ -23,6 +23,8 @@ TODO:
  DONE info unsupported-option panel as default action
  DONE complete and format orders table, sorting and style ok.
  + TODO:
+ 		WORKING on 4 order views: Edit=summaryLabels+PopupPanes ; Form=allTextFields ; Table ; Pdf=HTMLprintRenderEditable
+ 		
  		new/view/edit order ( testa + righe )
  			> how generate new guid ? see http://groups.google.com/group/sproutcore/browse_thread/thread/af45cd5d964d4b91/bf6c9bc2f2c34e3e?lnk=gst&q=CREATERECORD#bf6c9bc2f2c34e3e
  			> I need nested records for head and rows

@@ -169,7 +169,7 @@ Fweb.OrderView = SC.View.extend(
 				valuteL: SC.LabelView.design({
 					layout: { left: 820, top: 82, height: 20, width: 80 },
 					classNames: ['ord-field-label'],
-					value: 'listino',
+					value: 'valuta',
 				}),
 				modPagL: SC.LabelView.design({
 					layout: { left: 880, top: 82, height: 20, width: 80 },
@@ -309,6 +309,7 @@ Fweb.OrderView = SC.View.extend(
 			})
 		);
 		childViews.push(view);
+		);
 		
 		// rows labels
 		view = this.createChildView(
