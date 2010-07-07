@@ -23,10 +23,12 @@ Fweb.orderController = SC.ArrayController.create(
 		var nestedStore = Fweb.store.chain(); // create nested store
 		var order = nestedStore.createRecord(Fweb.Order, {guid: 999}); // create a new order (guid ?!?!? http://groups.google.com/group/sproutcore/browse_thread/thread/af45cd5d964d4b91/bf6c9bc2f2c34e3e?lnk=gst&q=CREATERECORD#bf6c9bc2f2c34e3e)
 		this.set('order', order);
-		this.set('title', 'Nuovo ordine');
+		this.set('title', 'Ordine');
 		var nestedOrder = nestedStore.find(order); // nested record of Order
 		this.set('nestedStore', nestedStore);
 		this.set('nestedOrder', nestedOrder);
+		var emptyRow = nestedStore.createRecord(Fweb.OrderRow, {guid: 999, order: nestedOrder.get('guid'), rowNum: 1});
+		this.set('content', [emptyRow]);
 	},
 	
 	// load an order
@@ -49,12 +51,12 @@ Fweb.orderController = SC.ArrayController.create(
 	
 	showNewOrder: function() {
 		this.loadNewOrder();
-		Fweb.mainMenuController.set('nowShowing', 'OrderView')
+		Fweb.mainMenuController.set('nowShowing', 'OrderView');
 	},
 	
 	showOrder: function() {
 		this.loadOrder();
-		Fweb.mainMenuController.set('nowShowing', 'OrderView')
+		Fweb.mainMenuController.set('nowShowing', 'OrderView');
 	},
 
 }) ;

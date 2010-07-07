@@ -24,6 +24,10 @@ TODO:
  DONE complete and format orders table, sorting and style ok.
  + TODO:
  		WORKING on 4 order views: Edit=summaryLabels+PopupPanes ; Form=allTextFields ; Table ; Pdf=HTMLprintRenderEditable
+			for Saturday:
+				> edit order view: labels summary and panels;
+				> form order view: adds all row fields, redesign head, add some style;
+				> add some scroll Y (and mybe X on order form view);
  		
  		new/view/edit order ( testa + righe )
  			> how generate new guid ? see http://groups.google.com/group/sproutcore/browse_thread/thread/af45cd5d964d4b91/bf6c9bc2f2c34e3e?lnk=gst&q=CREATERECORD#bf6c9bc2f2c34e3e

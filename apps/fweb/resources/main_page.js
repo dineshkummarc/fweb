@@ -222,7 +222,7 @@ Fweb.mainPage = SC.Page.design({
 		}),
 		
 		OrderButtonsView: SC.SegmentedView.design({
-			layout: { top: 10, left: 115, width: 200, height: 24 },
+			layout: { top: 10, left: 150, width: 200, height: 24 },
 			items: [
 				{ title: '', value: 'save', icon: sc_static('resources/icons/disk.png'), target: 'Fweb.mainMenuController', action: 'showSorryPane' },
 				{ title: '', value: 'reset', icon: sc_static('resources/icons/arrow_refresh.png'), target: 'Fweb.mainMenuController', action: 'showSorryPane' },

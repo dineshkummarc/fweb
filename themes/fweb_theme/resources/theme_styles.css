@@ -154,8 +154,12 @@
 
 /* ORDER VIEW */
 .ord-head {
-	border: 
+	 
 }
+.ord-row {
+	
+}
+
 .ord-field-label {
 	font-size: 10px !important;
 }

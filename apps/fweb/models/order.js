@@ -57,7 +57,11 @@ Fweb.Order = SC.Record.extend(
 	modPag: SC.Record.attr(String),
 	
 	ragSocCli: function() {
-		return this.get('client').get('ragSoc');
+		if (this.get('client')==undefined){
+			return "";
+		}else{
+			return this.get('client').get('ragSoc');
+		}
 	}.property('ragSoc').cacheable(),
 	
 	fullDest: function() {
@@ -65,11 +69,19 @@ Fweb.Order = SC.Record.extend(
 	}.property('destination', 'address', 'city', 'cap', 'prov', 'tel').cacheable(),
 	
 	formattedDate: function() {
-		return this.get('date').toFormattedString('%d/%m/%Y');
+		if (this.get('date')==undefined){
+			return "";
+		}else{
+			return this.get('date').toFormattedString('%d/%m/%Y');
+		}
 	}.property('date').cacheable(),
 	
 	formattedDateDelivery: function() {
-		return this.get('dateDelivery').toFormattedString('%d/%m/%Y');
+		if (this.get('dateDelivery')==undefined){
+			return "";
+		}else{
+			return this.get('dateDelivery').toFormattedString('%d/%m/%Y');
+		}
 	}.property('dateDelivery').cacheable(),
 	
 	// F12 standard fields

@@ -65,7 +65,7 @@ Fweb.welcomeController = SC.ArrayController.create(
 					layout: { centerY: 0, centerX: 0, top: 140, height: 24, width: 400 },
 					items: [
 						{ title: 'Offerta', value: 'off', icon: '', target: 'Fweb.welcomeController.pane', action: 'remove' },
-						{ title: 'Ordine', value: 'ord', icon: '', target: 'Fweb.welcomeController.pane', action: 'remove' },
+						{ title: 'Ordine', value: 'ord', icon: '', target: 'Fweb.welcomeController', action: 'showNewOrder' },
 						{ title: 'DDT', value: 'ddt', icon: '', target: 'Fweb.welcomeController.pane', action: 'remove' },
 						{ title: 'Fattura', value: 'fatt	', icon: '', target: 'Fweb.welcomeController.pane', action: 'remove' },
 					],
@@ -125,6 +125,11 @@ Fweb.welcomeController = SC.ArrayController.create(
 	showOrders: function() {
 		this.hidePane();
 		Fweb.ordersController.showOrders();
+	},
+	
+	showNewOrder: function() {
+		this.hidePane();
+		Fweb.orderController.showNewOrder();
 	}
 
 
