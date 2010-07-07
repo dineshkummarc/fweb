@@ -249,7 +249,8 @@ Fweb.mainPage = SC.Page.design({
    		layout: { left:10, right:10, top:30, bottom:10 },
 			nowShowing: 'OrderEditView',
 			items: [
-        { title: "Edit", value: "OrderEditView", icon: sc_static('resources/icons/page_white.png') },
+				{ title: "Edit", value: "OrderEditView", icon: sc_static('resources/icons/page_white.png') },
+        { title: "Form", value: "OrderFormView", icon: sc_static('resources/icons/page_edit.png') },
 	      { title: "Table", value: "OrderTableView", icon: sc_static('resources/icons/table.png') },
 	      { title: "Pdf", value: "OrderPdfView", icon: sc_static('resources/icons/page_white_acrobat.png') }
 			],		
@@ -261,7 +262,11 @@ Fweb.mainPage = SC.Page.design({
 
 	}),
 	
-	OrderEditView: Fweb.OrderView.design({
+	OrderEditView: Fweb.OrderEditView.design({
+    layout: { left: 10, right: 10, top: 10, bottom: 10 },
+	}),
+	
+	OrderFormView: Fweb.OrderView.design({
     layout: { left: 10, right: 10, top: 10, bottom: 10 },
 	}),
 	
