@@ -261,23 +261,23 @@ Fweb.mainPage = SC.Page.design({
 		}),
 
 	}),
-	
+	// labels summary + panels Pane on mouse events.
 	OrderEditView: Fweb.OrderEditView.design({
     layout: { left: 10, right: 10, top: 10, bottom: 10 },
 	}),
-	
+	// classic form with all fields
 	OrderFormView: Fweb.OrderView.design({
     layout: { left: 10, right: 10, top: 10, bottom: 10 },
 	}),
-	
+	// editable labels + editable table for rows
 	OrderTableView: SC.LabelView.design({
     layout: { left: 10, right: 10, top: 10, bottom: 10 },
-		value: "OrderTableView: una vista a tabella dell'ordine"
+		value: "OrderTableView: una vista a tabella dell'ordine (editabili)"
 	}),
-	
+	// render of pdf with editable label (only field on printed order)
 	OrderPdfView: SC.LabelView.design({
     layout: { left: 10, right: 10, top: 10, bottom: 10 },
-		value: "OrderPdfView: una stampa in pdf (o html) formattata dell'ordine"
+		value: "OrderPdfView: una stampa in pdf (o html) formattata dell'ordine (label editabili on line, ma solo i campi visibili in stampa)"
 	}),
 	
 });
