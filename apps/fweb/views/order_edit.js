@@ -30,11 +30,23 @@ Fweb.OrderEditView = SC.View.extend(
 				classNames: ['edit-ord-head rounded hl'],
 				childViews: 'actions basic rif operator spedDest ddt general'.w(),
 				
-				actions: SC.LabelView.design({
-					layout: { right: 2, top: 2, height: 20, width: 20 },
+				actions: SC.View.design({
+					layout: { right: 2, top: 2, height: 20, width: 80 },
 					classNames: ['actions'],
-					value: '',
-					icon: sc_static('resources/icons/cancel.png'),
+					childViews: 'edit del'.w(),
+					
+					edit: SC.LabelView.design({
+						layout: { right: 25, top: 0, height: 20, width: 20 },
+						classNames: ['icon-button'],
+						value: '',
+						icon: sc_static('resources/icons/pencil.png'),
+					}),
+					del: SC.LabelView.design({
+						layout: { right: 0, top: 0, height: 20, width: 20 },
+						classNames: ['icon-button'],
+						value: '',
+						icon: sc_static('resources/icons/delete.png'),
+					})
 				}),
 				
 				basic: SC.LabelView.design({
