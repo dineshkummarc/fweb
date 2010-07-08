@@ -152,14 +152,55 @@
 	background-color: #AAFFAA !important;
 }
 
-/* ORDER VIEW */
+/* GENERAL FOR ORDER */
+.hl:hover {
+	background: #FFFFBB;
+}
+.rounded {
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	border-radius: 5px;
+}
+.blue {
+	font-size: 12px !important;
+	color: #fff;
+	background: #3388DD;
+}
+.actions {
+	display: none;
+}
+.hl:hover > div.actions {
+	display: block;
+}
+/* edit order view */
+.edit-ord-head > div.basic-data {
+	padding: 2px 0 2px 6px !important;
+	font-size: 12px !important;
+	color: #fff;
+	background: #3388DD;
+}
+.edit-ord-head > div.rif-data {
+	padding: 2px 0 2px 6px !important;
+	font-size: 12px !important;
+	color: #fff;
+	background: #AABBCC;
+}
+.edit-ord-head > div.operator-data {
+	padding: 2px 0 2px 6px !important;
+	font-size: 12px !important;
+	text-align: center;
+	color: #fff;
+	background: #229922;
+}
+/* form order view */
 .ord-head {
-	 
 }
 .ord-row {
-	
 }
 
 .ord-field-label {
 	font-size: 10px !important;
+}
+.ord-field-mini-label {
+	font-size: 6px !important;
 }

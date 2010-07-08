@@ -19,9 +19,9 @@ Fweb.OrderRowView = SC.View.extend(
 		// ROW of order
   	view = this.createChildView(
 			SC.View.design({
-		    layout: { left: 0, right: 0, top: 0, height: 50 },
+		    layout: { left: 0, right: 0, top: 0, height: 120 },
 				classNames: ['ord-row'],
-				childViews: 'rowNum quant quantEvasa art desc1 length width height datConPrev price note'.w(),
+				childViews: 'rowNum quant quantEvasa quantInProd quantInProdML quantProd quantProdML quantInSped quantInSpedML art desc1 desc2 desc3 desc4 length width height datConPrev price note'.w(),
 							
 				rowNum: SC.LabelView.design({
 					layout: { left: 0, top: 0, height: 20, width: 30 },
@@ -31,9 +31,36 @@ Fweb.OrderRowView = SC.View.extend(
 					layout: { left: 30, top: 0, height: 20, width: 50 },
 					valueBinding: '.parentView.parentView.content.quant',
 				}),
+				quantInProd: SC.TextFieldView.design({
+					layout: { left: 30, top: 30, height: 20, width: 50 },
+					valueBinding: '.parentView.parentView.content.quantInProd',
+				}),
+				quantInProdML: SC.LabelView.design({
+					layout: { left: 54, top: 34, height: 12, width: 50 },
+					classNames: ['ord-field-mini-label'],
+					value: 'in prod.',
+				}),
+				quantInSped: SC.TextFieldView.design({
+					layout: { left: 30, top: 60, height: 20, width: 50 },
+					valueBinding: '.parentView.parentView.content.quantInSped',
+				}),
+				quantInSpedML: SC.LabelView.design({
+					layout: { left: 54, top: 64, height: 12, width: 50 },
+					classNames: ['ord-field-mini-label'],
+					value: 'in sped.',
+				}),
 				quantEvasa: SC.TextFieldView.design({
 					layout: { left: 90, top: 0, height: 20, width: 50 },
 					valueBinding: '.parentView.parentView.content.quantEvasa',
+				}),
+				quantProd: SC.TextFieldView.design({
+					layout: { left: 90, top: 30, height: 20, width: 50 },
+					valueBinding: '.parentView.parentView.content.quantProd',
+				}),
+				quantProdML: SC.LabelView.design({
+					layout: { left: 114, top: 34, height: 12, width: 50 },
+					classNames: ['ord-field-mini-label'],
+					value: 'prodott.',
 				}),
 				art: SC.TextFieldView.design({
 					layout: { left: 150, top: 0, height: 20, width: 100 },
@@ -42,6 +69,19 @@ Fweb.OrderRowView = SC.View.extend(
 				desc1: SC.TextFieldView.design({
 					layout: { left: 260, top: 0, height: 20, width: 200 },
 					valueBinding: '.parentView.parentView.content.desc1',
+				}),
+				desc2: SC.TextFieldView.design({
+					layout: { left: 260, top: 30, height: 20, width: 200 },
+					valueBinding: '.parentView.parentView.content.desc2',
+					toolTip: "seconda descrizione dell'articolo",
+				}),
+				desc3: SC.TextFieldView.design({
+					layout: { left: 260, top: 60, height: 20, width: 200 },
+					valueBinding: '.parentView.parentView.content.desc3',
+				}),
+				desc4: SC.TextFieldView.design({
+					layout: { left: 260, top: 90, height: 20, width: 200 },
+					valueBinding: '.parentView.parentView.content.desc4',
 				}),
 				length: SC.TextFieldView.design({
 					layout: { left: 470, top: 0, height: 20, width: 50 },
@@ -64,7 +104,7 @@ Fweb.OrderRowView = SC.View.extend(
 					valueBinding: '.parentView.parentView.content.price',
 				}),
 				note: SC.TextFieldView.design({
-					layout: { left: 830, top: 0, height: 20, width: 200 },
+					layout: { left: 830, top: 0, height: 20, width: 300 },
 					valueBinding: '.parentView.parentView.content.note',
 				}),
 				
@@ -84,9 +124,9 @@ Fweb.OrderRowView = SC.View.extend(
 				artVar: SC.Record.attr(String),
 				artCli: SC.Record.attr(String),
 																										desc1: SC.Record.attr(String),
-				desc2: SC.Record.attr(String),
-				desc3: SC.Record.attr(String),
-				desc4: SC.Record.attr(String),
+																										desc2: SC.Record.attr(String),
+																										desc3: SC.Record.attr(String),
+																										desc4: SC.Record.attr(String),
 				prodType: SC.Record.attr(String),
 				fuoriMisura: SC.Record.attr(String),
 				siglaDep: SC.Record.attr(String),
@@ -104,9 +144,9 @@ Fweb.OrderRowView = SC.View.extend(
 																										price: SC.Record.attr(Number),
 				valSconto: SC.Record.attr(Number),
 																										quant: SC.Record.attr(Number),
-				quantInProd: SC.Record.attr(Number),
-				quantProd: SC.Record.attr(Number),
-				quantInSped: SC.Record.attr(Number),
+																										quantInProd: SC.Record.attr(Number),
+																										quantProd: SC.Record.attr(Number),
+																										quantInSped: SC.Record.attr(Number),
 																										quantEvasa: SC.Record.attr(Number),
 																										datConPrev: SC.Record.attr(SC.DateTime),
 				datConRich: SC.Record.attr(SC.DateTime),

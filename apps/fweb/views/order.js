@@ -193,6 +193,7 @@ Fweb.OrderView = SC.View.extend(
 				clientRef: SC.TextFieldView.design({
 					layout: { left: 320, top: 20, height: 20, width: 100 },
 					valueBinding: 'Fweb.orderController.nestedOrder.clientRef',
+					toolTip: 'riferimento ordine del cliente',
 				}),
 				dateClientRef: SC.TextFieldView.design({
 					layout: { left: 430, top: 20, height: 20, width: 80 },
@@ -383,12 +384,25 @@ Fweb.OrderView = SC.View.extend(
 		    layout: { left: 0, right: 0, top: 150, bottom: 10 },
 				classNames: ['ord-rows'],
 				childViews: 'rows'.w(),
-				
+				/* scrollview ? sembrerebbe che sia necessario dargli un layout fisso, altezza larghezza.
+				    in realtà a me basterebbe attivare la scrollbar del browser...
+				rows: SC.ScrollView.design({
+        layout: { top: 0, left: 0 },
+        hasHorizontalScroller: YES,
+				contentView: SC.ListView.design({
+          contentBinding: 'Fweb.orderController.arrangedObjects',
+				  selectionBinding: 'Fweb.orderController.selection',
+					exampleView: Fweb.OrderRowView,
+					rowHeight: 120,
+					contentValueKey: 'desc1',
+					}),
+				}),
+				*/
 				rows: SC.ListView.design({
 				  contentBinding: 'Fweb.orderController.arrangedObjects',
 				  selectionBinding: 'Fweb.orderController.selection',
 					exampleView: Fweb.OrderRowView,
-					rowHeight: 30,
+					rowHeight: 120,
 					contentValueKey: 'desc1',
 				}),
 				

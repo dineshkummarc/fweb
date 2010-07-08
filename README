@@ -27,6 +27,7 @@ TODO:
 			for Saturday:
 				> edit order view: labels summary and panels;
 				> form order view: adds all row fields, redesign head, add some style;
+				< add some data fixture
 				> add some scroll Y (and mybe X on order form view);
  		
  		new/view/edit order ( testa + righe )
@@ -40,10 +41,12 @@ TODO:
 ...
 
 BUGS:
+ - order head views doesn't update when changing order (or new order)
  - separators don't appear in submenu
  - don't work in IE
 
 FREE ideas:
+* su tutti i campi che identificano un oggetto, ad esempio la rag.soc del cliente il menù contestuale (o bottoncino sull'hover) permette di vedere tutti i dati del soggetto in un pannello. Nonchè di scrivere/chiamare il cliente...
 * autosave on/off on complex form
 * provare anche un menù a barra laterale alla iTunes + multi colonna alla finder...
 * creare un model Sede per avere infiniti indirizzi & riferimenti... anche per le destinazioni alternative ! Tipo: sede principale, sede legale, magazzino, destinaz. alternativa ecc ecc...

@@ -18,6 +18,7 @@ Fweb.mainPage = SC.Page.design({
 		}),
 		
 		MainContainerView: SC.ContainerView.design({
+			//layout: { centerX: 0, width: 1200, top: 46, height: 700 }, larghezza fissa e centrata.... mmmhhh
 		  layout: { left: 0, right: 0, top: 46, bottom: 0 },
 			nowShowingBinding: 'Fweb.mainMenuController.nowShowing',
 		})
@@ -267,7 +268,7 @@ Fweb.mainPage = SC.Page.design({
 	}),
 	// classic form with all fields
 	OrderFormView: Fweb.OrderView.design({
-    layout: { left: 10, right: 10, top: 10, bottom: 10 },
+    	layout: { left: 10, right: 10, top: 10, bottom: 10 },
 	}),
 	// editable labels + editable table for rows
 	OrderTableView: SC.LabelView.design({
