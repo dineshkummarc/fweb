@@ -156,7 +156,7 @@
 .even > div.ord-edit-row {
 	background: #EEF0FF;
 }
-.hl:hover {
+.hl:hover, .edit-mode {
 	background: #FFFFBB !important;
 }
 .rounded {

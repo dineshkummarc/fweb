@@ -30,6 +30,9 @@ Fweb.main = function main() {
 	
 	// show welcome pane
 	Fweb.welcomeController.showWelcomePane();
+	
+	// only for debug
+	var test1 = '';
 
 } ;
 

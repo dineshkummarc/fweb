@@ -60,5 +60,29 @@ Fweb.orderController = SC.ArrayController.create(
 		this.loadOrder();
 		Fweb.mainMenuController.set('nowShowing', 'OrderView');
 	},
+	
+	showHeadPane: function() {
+	  var pane = SC.PickerPane.create({
+	    layout: { left: 345, top: 116, right: 20, height: 200 },
+	    contentView: SC.View.extend({
+	      layout: { top: 0, left: 0, bottom: 0, right: 0 },
+	      childViews: 'titleView'.w(),
+
+	      titleView: SC.LabelView.extend({
+	        layout: { top: 10, left: 10, height: 24 },
+	        controlSize: SC.LARGE_CONTROL_SIZE,
+	        icon: sc_static('resources/icons/sport_soccer.png'),
+	        value: "Head"
+	      }),
+
+	    })
+	  });
+	  pane.append();
+	  this.set('filterPane', pane);
+	},
+	
+	hideFilterPane: function() {
+    this.filterPane.remove();
+  },
 
 }) ;
