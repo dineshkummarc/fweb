@@ -105,7 +105,7 @@ Fweb.OrderEditView = SC.View.extend(
 				  contentBinding: 'Fweb.orderController.arrangedObjects',
 				  selectionBinding: 'Fweb.orderController.selection',
 					exampleView: Fweb.OrderEditRowView,
-					rowHeight: 26,
+					rowHeight: 25,
 					contentValueKey: 'num',
 				}),
 

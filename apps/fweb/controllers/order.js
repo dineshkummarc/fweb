@@ -4,6 +4,8 @@
 // ==========================================================================
 /*globals Fweb */
 
+var now = SC.DateTime.create();
+
 /** @class
 
   This controller manage single order views and actions
@@ -21,13 +23,13 @@ Fweb.orderController = SC.ArrayController.create(
 	// create and load a new order record
 	loadNewOrder: function() {
 		var nestedStore = Fweb.store.chain(); // create nested store
-		var order = nestedStore.createRecord(Fweb.Order, {guid: 999}); // create a new order (guid ?!?!? http://groups.google.com/group/sproutcore/browse_thread/thread/af45cd5d964d4b91/bf6c9bc2f2c34e3e?lnk=gst&q=CREATERECORD#bf6c9bc2f2c34e3e)
+		var order = nestedStore.createRecord(Fweb.Order, {guid: 999, date: now, dateClientRef: now}); // create a new order (guid ?!?!? http://groups.google.com/group/sproutcore/browse_thread/thread/af45cd5d964d4b91/bf6c9bc2f2c34e3e?lnk=gst&q=CREATERECORD#bf6c9bc2f2c34e3e)
 		this.set('order', order);
 		this.set('title', 'Ordine');
 		var nestedOrder = nestedStore.find(order); // nested record of Order
 		this.set('nestedStore', nestedStore);
 		this.set('nestedOrder', nestedOrder);
-		var emptyRow = nestedStore.createRecord(Fweb.OrderRow, {guid: 999, order: nestedOrder.get('guid'), rowNum: 1});
+		var emptyRow = nestedStore.createRecord(Fweb.OrderRow, {guid: 999, order: nestedOrder.get('guid'), rowNum: 1, datConPrev: now});
 		this.set('content', [emptyRow]);
 	},
 	
