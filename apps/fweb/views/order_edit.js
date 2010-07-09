@@ -28,21 +28,22 @@ Fweb.OrderEditView = SC.View.extend(
 			SC.View.design({
 		    layout: { left: 10, right: 10, top: 10, height: 75 },
 				classNames: ['edit-ord-head rounded hl'],
+				toolTip: "Doppio click (o matita a destra) per aprire il pannello di inserimento/modifica della testa dell'ordine",
 				childViews: 'actions basic rif operator spedDest ddt general'.w(),
 				
 				actions: SC.View.design({
-					layout: { right: 2, top: 2, height: 20, width: 80 },
-					classNames: ['actions'],
+					layout: { right: 0, top: 2, height: 20, width: 60 },
+					classNames: ['actions rounded'],
 					childViews: 'edit del'.w(),
 					
 					edit: SC.LabelView.design({
-						layout: { right: 25, top: 0, height: 20, width: 20 },
+						layout: { right: 26, top: 0, height: 20, width: 20 },
 						classNames: ['icon-button'],
 						value: '',
 						icon: sc_static('resources/icons/pencil.png'),
 					}),
 					del: SC.LabelView.design({
-						layout: { right: 0, top: 0, height: 20, width: 20 },
+						layout: { right: 2, top: 0, height: 20, width: 20 },
 						classNames: ['icon-button'],
 						value: '',
 						icon: sc_static('resources/icons/delete.png'),
@@ -87,7 +88,7 @@ Fweb.OrderEditView = SC.View.extend(
 				}),
 				
 				doubleClick: function(evt) {
-					alert('double click on .ord-head');
+					alert('double click on .edit-ord-head');
 				},
 				
 			})
@@ -104,7 +105,7 @@ Fweb.OrderEditView = SC.View.extend(
 				  contentBinding: 'Fweb.orderController.arrangedObjects',
 				  selectionBinding: 'Fweb.orderController.selection',
 					exampleView: Fweb.OrderEditRowView,
-					rowHeight: 24,
+					rowHeight: 26,
 					contentValueKey: 'num',
 				}),
 

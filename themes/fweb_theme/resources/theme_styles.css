@@ -168,9 +168,14 @@
 }
 .actions {
 	display: none;
+	z-index: 1 !important;
 }
 .hl:hover > div.actions {
 	display: block;
+	background: #FFFFBB;
+}
+.even > div.ord-edit-row {
+	background: #EEF0FF;
 }
 /* edit order view */
 .edit-ord-head > div.basic-data {
