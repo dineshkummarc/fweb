@@ -61,7 +61,7 @@ Fweb.orderController = SC.ArrayController.create(
 		Fweb.mainMenuController.set('nowShowing', 'OrderView');
 	},
 	
-	showHeadPane: function() {
+	showHeadPane: function(origView) {
 	  var pane = SC.PickerPane.create({
 	    layout: { left: 345, top: 116, right: 20, height: 200 },
 	    contentView: SC.View.extend({
@@ -78,11 +78,7 @@ Fweb.orderController = SC.ArrayController.create(
 	    })
 	  });
 	  pane.append();
-	  this.set('filterPane', pane);
+	  this.set('headPane', pane);
 	},
-	
-	hideFilterPane: function() {
-    this.filterPane.remove();
-  },
 
 }) ;

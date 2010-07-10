@@ -91,11 +91,11 @@ Fweb.OrderEditView = SC.View.extend(
 					//Fweb.test1 = evt;
 					//alert('double click on: '+evt.originalTarget);
 					//evt.originalTarget.className += ' edit-mode';
-					this.classNames.pushObject(' edit-mode');
+					this.classNames.pushObject('edit-mode');
 					this.set('layerNeedsUpdate', YES);
 					//Fweb.test1 = this;
 					//alert(this);
-					Fweb.orderController.showHeadPane();
+					Fweb.orderController.showHeadPane(this);
 				},
 				
 			})
